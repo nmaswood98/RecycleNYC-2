@@ -8,4 +8,4 @@
 - Maswood
 - Shofi  
   
-(See the app in action)[]  
+[See the app in action](https://shofi384.github.io/RecycleNYC/)
