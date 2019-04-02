@@ -1,13 +1,15 @@
 body {
-	margin: 5%;
 	background-color: #354154;
 	color: #a3ff87;
 	text-align: center;
 }
 
 footer {
-  height:25px;
-  color:  #800000;
+  background-color: #282c34;
+  height:20px;
+  width: 100%;
+  color:  #FFDAB9;
   text-align: center;
-  background-color: #FFDAB9;
+  bottom: 0;
+  position: fixed;
 }
