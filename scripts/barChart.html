@@ -1,47 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>RecycleNYC</title>
-	<link rel="stylesheet" href="styles.css">
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-
-	<script src="https://d3js.org/topojson.v1.min.js"></script>
-	<script type="text/javascript" src="./scripts/script.js"></script>
-	
-
-</head>
-
+<html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+body { font: 12px Arial;}
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+.legend {
+    font-size: 16px;
+    font-weight: bold;
+    text-anchor: middle;
+}
+</style>
 <body>
-	<h1>Recycle NYC</h1>
-
-	<!-- <script type="text/javascript"> function show() {
-			document.getElementById("main").innerHTML='<object type="text/html" data="./scripts/barChart.html" ></object>';
-		}
-		function changeId() {
-			document.getElementById("main").setAttribute("id", "d3id");
-		}
-	</script> -->
-
-	<div class="mainGrid">
-		<div class="grid-container">
-			<div class="nav"><img src="logo.png"></img><br>
-				<button onclick="changeId()">Bar Chart</button>
-				<button onclick="changeId()">Density Map</button>
-				<button onclick="changeId()">Bins Ratio</button>
-			</div>
-			<div id="main" class="body"></div>
-			<div class="right"></div>
-		</div>
-		<div class='grid-container'>
-			<div></div>
-			<div class="para">This visualization shows the recycling behaviour of NYC people relating to their zone in NYC as well as their access to recycling facilities</div>
-			<div></div>
-		</div>
-	</div>
-
-
-	<div id="" ></div>
+<div id="d3id" ></div>
 <!-- load the d3.js library -->    
 <script src="https://d3js.org/d3.v4.min.js"></script>
 
@@ -80,7 +61,7 @@ models = models.map(i => {
   return i;
 });
 
-var container = d3.select('#main'),
+var container = d3.select('#d3id'),
     width = 800,
     height = 500,
     margin = {top: 30, right: 20, bottom: 30, left: 50},
@@ -131,7 +112,7 @@ Borough.selectAll(".bar.Bins")
   .enter()
   .append("rect")
   .attr("class", "bar Bins")
-  .style("fill","#4286f4")
+.style("fill","#4286f4")
   .attr("x", d => xScale1('Bins'))
   .attr("y", d => yScale(d.Bins))
   .attr("width", xScale1.bandwidth())
@@ -154,7 +135,4 @@ svg.append("g")
 
 </script>
 </body>
-
-<footer>@Team Visualization 2019</footer>
-
 </html>
