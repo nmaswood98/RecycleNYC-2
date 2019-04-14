@@ -2,6 +2,20 @@ body {
 	background-color: #354154;
 	color: #a3ff87;
 	text-align: center;
+  min-height: 100vh;
+}
+
+button {
+  background-color: #a3ff87;
+  color: #354154;
+  margin: 2%;
+  cursor: pointer;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+button:hover {
+  background-color: green;
 }
 
 footer {
@@ -12,4 +26,36 @@ footer {
   text-align: center;
   bottom: 0;
   position: fixed;
+}
+
+img {
+  margin: 5%;
+  height: 80px;
+}
+
+#main {
+  margin: 1px;
+  shape-margin: solid;
+}
+.mainGrid {
+  display: grid;
+  grid-template-rows: 5fr 1fr;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 12fr 1fr;
+  background-color: #354154;
+  color: #a3ff87;
+}
+
+.grid-container > div {
+  background-color: #282c34;
+  color: #a3ff87;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.para {
+  font-size: 25px;
 }

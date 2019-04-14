@@ -1,0 +1,27 @@
+[
+  {
+    "Borough": "Bronx",
+    "DiversionRate": 128.5651,
+    "Bins": 108
+  },
+  {
+    "Borough": "Brooklyn",
+    "DiversionRate": 215.6459,
+    "Bins": 94
+  },
+  {
+    "Borough": "Manhattan",
+    "DiversionRate": 154.3141,
+    "Bins": 184
+  },
+  {
+    "Borough": "Queens",
+    "DiversionRate": 177.6617,
+    "Bins": 117
+  },
+  {
+    "Borough": "Staten Island",
+    "DiversionRate": 39.5364,
+    "Bins": 42
+  }
+]
