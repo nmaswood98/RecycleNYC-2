@@ -119,7 +119,7 @@ Borough.selectAll(".bar.DiversionRate")
   .enter()
   .append("rect")
   .attr("class", "bar DiversionRate")
-.style("fill","#73c473")
+  .style("fill","#73c473")
   .attr("x", d => xScale1('DiversionRate'))
   .attr("y", d => yScale(d.DiversionRate))
   .attr("width", xScale1.bandwidth())
@@ -150,8 +150,8 @@ svg.append("g")
 
 // Add the Y Axis
 svg.append("g")
-   .attr("class", "y axis")
-   .style("font-size","20px")
+   .attr("class", "y axis axisRed")
+   .style("font-size", "20px")
    .call(yAxis);
 
 </script>
