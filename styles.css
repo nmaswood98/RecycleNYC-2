@@ -1,5 +1,16 @@
-.axis text{
+/* To color axis unit text*/
+.axisColor text {
   fill: #FFDAB9;
+}
+
+/* To color axis unit line*/
+.axisColor line {
+  stroke: #ff42bc;
+}
+
+/* To color axis line*/
+.axisColor path {
+  stroke: #bfffe7;
 }
 
 body {

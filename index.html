@@ -143,14 +143,14 @@ Borough.selectAll(".bar.Bins")
  
 // Add the X Axis
 svg.append("g")
-   .attr("class", "x axis")
+   .attr("class", "x axis axisColor")
    .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
    .style("font-size","20px")
    .call(xAxis);
 
 // Add the Y Axis
 svg.append("g")
-   .attr("class", "y axis axisRed")
+   .attr("class", "y axis axisColor")
    .style("font-size", "20px")
    .call(yAxis);
 
