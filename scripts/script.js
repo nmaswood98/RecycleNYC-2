@@ -18,10 +18,6 @@ function createMap() {
             let projection = d3.geoAlbersUsa().fitSize([window.innerWidth, 900], bouroughs); //Create map projection and center it based on the data in the screen
             let path = d3.geoPath().projection(projection).pointRadius(2.5); //Create geo path using the projection created.
 
-
-console.log(color(4.9));
-
-
             let count = -1;
             let diversionRates = [75.58194444,63.12152778,78.44722222,70.12731481,75.20119048]; //data for 2018
             svg.selectAll(".boroughs") //Draw the bouroughs on the screen
