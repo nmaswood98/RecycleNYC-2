@@ -13,10 +13,14 @@
   stroke: #bfffe7;
 }
 
+.bar:hover {
+  fill: #e2caaa;
+}
+
 body {
-	background-color: #354154;
-	color: #a3ff87;
-	text-align: center;
+  background-color: #354154;
+  color: #a3ff87;
+  text-align: center;
   min-height: 100vh;
 }
 
