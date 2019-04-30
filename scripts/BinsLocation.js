@@ -5,11 +5,15 @@
 //const communityDistricts = require('../CommunityDistricts.json');
 
 let dataSetsToLoad = [d3.json("CommunityDistricts.json"), d3.json("DiversionRate.json"),d3.json("BoroughBoundaries.json"),
-                      d3.json("RecyclingBinsTopoJson.json"),d3.json("RecyclingRates.json"),d3.json("DistrictNumbers.json")];
+                      d3.json("RecyclingBinsTopoJson.json"),d3.json("RecyclingRates.json"),d3.json("DistrictNumbers.json"),
+                      d3.json("https://shofi384.github.io/RecycleNYC/data/CD_Population.json")];
 Promise.all(dataSetsToLoad).then(function(dataSets) {
     let districtNames = dataSets[5];
     let RecylingRates = dataSets[4];
     let coloringDataSet = dataSets[1];
+    let populationCDData = dataSets[6];//https://shofi384.github.io/RecycleNYC/data/CD_Population.json
+
+    cleanPopulation(populationCDData);
 
     let districtColoringFunction = (d, color) => {
         if (coloringDataSet.hasOwnProperty(d.properties.boro_cd)) {
@@ -21,17 +25,22 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
         }
     }
 
- 
-    d3.select("#submit").attr("class", "arda").on("submit", (e) => { 
+
+    d3.select("#submit").attr("class", "arda").on("submit", (e) => {
         let mapType = document.getElementById("MapType").value;
         let Year = document.getElementById("Year").value;
         let FiscalMonth = document.getElementById("FiscalMonth").value;
-        let rateType = document.getElementById("RateSelection").value; 
+        let rateType = document.getElementById("RateSelection").value;
 
 
         let coloringDataSet = RecylingRates[Year][FiscalMonth];
 
-        updateMap(districtNames,coloringDataSet,rateType);
+        if(rateType == "cdPopulation"){
+          populationMap(districtNames, populationCDData)
+        }else{
+          updateMap(districtNames,coloringDataSet,rateType);
+        }
+
 
 
         d3.event.preventDefault();
@@ -39,14 +48,14 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
         );
 
     let count = -1;
-    let diversionRates = [75.58194444, 63.12152778, 78.44722222, 70.12731481, 75.20119048]; 
+    let diversionRates = [75.58194444, 63.12152778, 78.44722222, 70.12731481, 75.20119048];
     let boroughColoringFunction = (d, color) => {count++; return color(diversionRates[count])};
 
     createMap(dataSets[0],"CommunityDistricts",dataSets[3],districtColoringFunction);
 
   });
 
-  //creates a map based on the datasets supplied. 
+  //creates a map based on the datasets supplied.
   function createMap(mapDataSet, mapDataSetObjectName, recylingBinDataSet,areaFillFunction, areaClickFunction) {
      // d3.select(".map ").remove(); //Remove existing map on screen
 
@@ -57,13 +66,13 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
           .attr("height", 900);
 
       let color = d3.scaleQuantize().domain([60, 100]).range(d3.schemeOranges[9]);
-     
+
       let area = topojson.feature(mapDataSet, mapDataSet.objects[mapDataSetObjectName]); //converts topojson back into geojson. topojson is better for storage
       let projection = d3.geoAlbersUsa().fitSize([window.innerWidth, 900], area); //Create map projection and center it based on the data in the screen
       let path = d3.geoPath().projection(projection).pointRadius(2.5); //Create geo path using the projection created.
 
       let count = -1;
-     
+
 
 
 
@@ -100,7 +109,7 @@ function updateMap(districtNames, recyclingRateDataSet, rateType ){
     else{
         colorScaleToUse = blueColors;
     }
-    
+
     d3.selectAll(".area")
     .transition().duration(1000)
     .attr("fill",(d)=>{
@@ -115,5 +124,31 @@ function updateMap(districtNames, recyclingRateDataSet, rateType ){
     });
 }
 
-
-
+function populationMap(districtNames, populationData){
+  let redColors = d3.scaleQuantize().domain([0, 255919]).range(d3.schemeReds[9]);
+  let colorScaleToUse = redColors;
+  let cleanPopulation;
+  let temp;
+  //populationData = d3.json("https://shofi384.github.io/RecycleNYC/data/CD_Population.json");
+  d3.selectAll(".area")
+  .transition().duration(1000)
+  .attr("fill",(d)=>{
+      let cd = d.properties.boro_cd;//In the form of BX01
+      for(var j =0; j<populationData.length; j++){
+        if(cd == populationData[j]["CD Number"]){
+          temp = colorScaleToUse(populationData[j]["2010 Population"]);
+          return temp;
+        }
+      }
+      return "#ADD8E6"
+  });
+}
+function cleanPopulation(populationData){
+  for(var i =0; i<populationData.length; i++){
+    if(populationData[i].Borough == "Manhattan") populationData[i]["CD Number"]+=100;
+    else if(populationData[i].Borough == "Bronx") populationData[i]["CD Number"]+=200;
+    else if(populationData[i].Borough == "Brooklyn") populationData[i]["CD Number"]+=300;
+    else if(populationData[i].Borough == "Queens") populationData[i]["CD Number"]+=400;
+    else if(populationData[i].Borough == "Staten Island") populationData[i]["CD Number"]+=500;
+  }
+}
