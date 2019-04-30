@@ -1,0 +1,592 @@
+[
+  {
+    "Borough": "Bronx",
+    "CD Number": 1,
+    "CD Name": "Melrose, Mott Haven, Port Morris",
+    "1970 Population": 138557,
+    "1980 Population": 78441,
+    "1990 Population": 77214,
+    "2000 Population": 82159,
+    "2010 Population": 91497
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 2,
+    "CD Name": "Hunts Point, Longwood",
+    "1970 Population": 99493,
+    "1980 Population": 34399,
+    "1990 Population": 39443,
+    "2000 Population": 46824,
+    "2010 Population": 52246
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 3,
+    "CD Name": "Morrisania, Crotona Park East",
+    "1970 Population": 150636,
+    "1980 Population": 53635,
+    "1990 Population": 57162,
+    "2000 Population": 68574,
+    "2010 Population": 79762
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 4,
+    "CD Name": "Highbridge, Concourse Village",
+    "1970 Population": 144207,
+    "1980 Population": 114312,
+    "1990 Population": 119962,
+    "2000 Population": 139563,
+    "2010 Population": 146441
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 5,
+    "CD Name": "University Hts., Fordham, Mt. Hope",
+    "1970 Population": 121807,
+    "1980 Population": 107995,
+    "1990 Population": 118435,
+    "2000 Population": 128313,
+    "2010 Population": 128200
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 6,
+    "CD Name": "East Tremont, Belmont",
+    "1970 Population": 114137,
+    "1980 Population": 65016,
+    "1990 Population": 68061,
+    "2000 Population": 75688,
+    "2010 Population": 83268
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 7,
+    "CD Name": "Bedford Park, Norwood, Fordham",
+    "1970 Population": 113764,
+    "1980 Population": 116827,
+    "1990 Population": 128588,
+    "2000 Population": 141411,
+    "2010 Population": 139286
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 8,
+    "CD Name": "Riverdale, Kingsbridge, Marble Hill",
+    "1970 Population": 103543,
+    "1980 Population": 98275,
+    "1990 Population": 97030,
+    "2000 Population": 101332,
+    "2010 Population": 101731
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 9,
+    "CD Name": "Soundview, Parkchester",
+    "1970 Population": 166442,
+    "1980 Population": 167627,
+    "1990 Population": 155970,
+    "2000 Population": 167859,
+    "2010 Population": 172298
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 10,
+    "CD Name": "Throgs Nk., Co-op City, Pelham Bay",
+    "1970 Population": 84948,
+    "1980 Population": 106516,
+    "1990 Population": 108093,
+    "2000 Population": 115948,
+    "2010 Population": 120392
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 11,
+    "CD Name": "Pelham Pkwy, Morris Park, Laconia",
+    "1970 Population": 105980,
+    "1980 Population": 99080,
+    "1990 Population": 97842,
+    "2000 Population": 110706,
+    "2010 Population": 113232
+  },
+  {
+    "Borough": "Bronx",
+    "CD Number": 12,
+    "CD Name": "Wakefield, Williamsbridge",
+    "1970 Population": 135010,
+    "1980 Population": 128226,
+    "1990 Population": 129620,
+    "2000 Population": 149077,
+    "2010 Population": 152344
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 1,
+    "CD Name": "Williamsburg, Greenpoint",
+    "1970 Population": 179390,
+    "1980 Population": 142942,
+    "1990 Population": 155972,
+    "2000 Population": 160338,
+    "2010 Population": 173083
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 2,
+    "CD Name": "Brooklyn Heights, Fort Greene",
+    "1970 Population": 110221,
+    "1980 Population": 92732,
+    "1990 Population": 94534,
+    "2000 Population": 98620,
+    "2010 Population": 99617
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 3,
+    "CD Name": "Bedford Stuyvesant",
+    "1970 Population": 203380,
+    "1980 Population": 133379,
+    "1990 Population": 138696,
+    "2000 Population": 143867,
+    "2010 Population": 152985
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 4,
+    "CD Name": "Bushwick",
+    "1970 Population": 137902,
+    "1980 Population": 92497,
+    "1990 Population": 102572,
+    "2000 Population": 104358,
+    "2010 Population": 112634
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 5,
+    "CD Name": "East New York, Starrett City",
+    "1970 Population": 170791,
+    "1980 Population": 154931,
+    "1990 Population": 161350,
+    "2000 Population": 173198,
+    "2010 Population": 182896
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 6,
+    "CD Name": "Park Slope, Carroll Gardens",
+    "1970 Population": 138933,
+    "1980 Population": 110228,
+    "1990 Population": 102724,
+    "2000 Population": 104054,
+    "2010 Population": 104709
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 7,
+    "CD Name": "Sunset Park, Windsor Terrace",
+    "1970 Population": 111607,
+    "1980 Population": 98567,
+    "1990 Population": 102553,
+    "2000 Population": 120063,
+    "2010 Population": 126230
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 8,
+    "CD Name": "Crown Heights North",
+    "1970 Population": 121821,
+    "1980 Population": 88796,
+    "1990 Population": 96400,
+    "2000 Population": 96076,
+    "2010 Population": 96317
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 9,
+    "CD Name": "Crown Heights South, Wingate",
+    "1970 Population": 101047,
+    "1980 Population": 96669,
+    "1990 Population": 110715,
+    "2000 Population": 104014,
+    "2010 Population": 98429
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 10,
+    "CD Name": "Bay Ridge, Dyker Heights",
+    "1970 Population": 129822,
+    "1980 Population": 118187,
+    "1990 Population": 110612,
+    "2000 Population": 122542,
+    "2010 Population": 124491
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 11,
+    "CD Name": "Bensonhurst, Bath Beach",
+    "1970 Population": 170119,
+    "1980 Population": 155072,
+    "1990 Population": 149994,
+    "2000 Population": 172129,
+    "2010 Population": 181981
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 12,
+    "CD Name": "Borough Park, Ocean Parkway",
+    "1970 Population": 166301,
+    "1980 Population": 155899,
+    "1990 Population": 160018,
+    "2000 Population": 185046,
+    "2010 Population": 191382
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 13,
+    "CD Name": "Coney Island, Brighton Beach",
+    "1970 Population": 97750,
+    "1980 Population": 100030,
+    "1990 Population": 102596,
+    "2000 Population": 106120,
+    "2010 Population": 104278
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 14,
+    "CD Name": "Flatbush, Midwood",
+    "1970 Population": 137041,
+    "1980 Population": 143859,
+    "1990 Population": 159825,
+    "2000 Population": 168806,
+    "2010 Population": 160664
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 15,
+    "CD Name": "Sheepshead Bay, Gerritsen Beach",
+    "1970 Population": 164815,
+    "1980 Population": 149572,
+    "1990 Population": 143477,
+    "2000 Population": 160319,
+    "2010 Population": 159650
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 16,
+    "CD Name": "Brownsville, Ocean Hill",
+    "1970 Population": 122589,
+    "1980 Population": 73801,
+    "1990 Population": 84923,
+    "2000 Population": 85343,
+    "2010 Population": 86468
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 17,
+    "CD Name": "East Flatbush, Rugby, Farragut",
+    "1970 Population": 149496,
+    "1980 Population": 154596,
+    "1990 Population": 161261,
+    "2000 Population": 165753,
+    "2010 Population": 155252
+  },
+  {
+    "Borough": "Brooklyn",
+    "CD Number": 18,
+    "CD Name": "Canarsie, Flatlands",
+    "1970 Population": 188643,
+    "1980 Population": 169092,
+    "1990 Population": 162428,
+    "2000 Population": 194653,
+    "2010 Population": 193543
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 1,
+    "CD Name": "Battery Park City, Tribeca",
+    "1970 Population": 7706,
+    "1980 Population": 15918,
+    "1990 Population": 25366,
+    "2000 Population": 34420,
+    "2010 Population": 60978
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 2,
+    "CD Name": "Greenwich Village, Soho",
+    "1970 Population": 84337,
+    "1980 Population": 87069,
+    "1990 Population": 94105,
+    "2000 Population": 93119,
+    "2010 Population": 90016
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 3,
+    "CD Name": "Lower East Side, Chinatown",
+    "1970 Population": 181845,
+    "1980 Population": 154848,
+    "1990 Population": 161617,
+    "2000 Population": 164407,
+    "2010 Population": 163277
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 4,
+    "CD Name": "Chelsea, Clinton",
+    "1970 Population": 83601,
+    "1980 Population": 82164,
+    "1990 Population": 84431,
+    "2000 Population": 87479,
+    "2010 Population": 103245
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 5,
+    "CD Name": "Midtown Business District",
+    "1970 Population": 31076,
+    "1980 Population": 39544,
+    "1990 Population": 43507,
+    "2000 Population": 44028,
+    "2010 Population": 51673
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 6,
+    "CD Name": "Stuyvesant Town, Turtle Bay",
+    "1970 Population": 122465,
+    "1980 Population": 127554,
+    "1990 Population": 133748,
+    "2000 Population": 136152,
+    "2010 Population": 142745
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 7,
+    "CD Name": "West Side, Upper West Side",
+    "1970 Population": 212422,
+    "1980 Population": 206669,
+    "1990 Population": 210993,
+    "2000 Population": 207699,
+    "2010 Population": 209084
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 8,
+    "CD Name": "Upper East Side",
+    "1970 Population": 200851,
+    "1980 Population": 204305,
+    "1990 Population": 210880,
+    "2000 Population": 217063,
+    "2010 Population": 219920
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 9,
+    "CD Name": "Manhattanville, Hamilton Heights",
+    "1970 Population": 113606,
+    "1980 Population": 103038,
+    "1990 Population": 106978,
+    "2000 Population": 111724,
+    "2010 Population": 110193
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 10,
+    "CD Name": "Central Harlem",
+    "1970 Population": 159267,
+    "1980 Population": 105641,
+    "1990 Population": 99519,
+    "2000 Population": 107109,
+    "2010 Population": 115723
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 11,
+    "CD Name": "East Harlem",
+    "1970 Population": 154662,
+    "1980 Population": 114569,
+    "1990 Population": 110508,
+    "2000 Population": 117743,
+    "2010 Population": 120511
+  },
+  {
+    "Borough": "Manhattan",
+    "CD Number": 12,
+    "CD Name": "Washington Heights, Inwood",
+    "1970 Population": 180561,
+    "1980 Population": 179941,
+    "1990 Population": 198192,
+    "2000 Population": 208414,
+    "2010 Population": 190020
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 1,
+    "CD Name": "Astoria, Long Island City",
+    "1970 Population": 185925,
+    "1980 Population": 185198,
+    "1990 Population": 188549,
+    "2000 Population": 211220,
+    "2010 Population": 191105
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 2,
+    "CD Name": "Sunnyside, Woodside",
+    "1970 Population": 95073,
+    "1980 Population": 88927,
+    "1990 Population": 94845,
+    "2000 Population": 109920,
+    "2010 Population": 113200
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 3,
+    "CD Name": "Jackson Heights, North Corona",
+    "1970 Population": 123635,
+    "1980 Population": 122090,
+    "1990 Population": 128924,
+    "2000 Population": 169083,
+    "2010 Population": 171576
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 4,
+    "CD Name": "Elmhurst, South Corona",
+    "1970 Population": 108233,
+    "1980 Population": 118430,
+    "1990 Population": 137023,
+    "2000 Population": 167005,
+    "2010 Population": 172598
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 5,
+    "CD Name": "Ridgewood, Glendale, Maspeth",
+    "1970 Population": 161022,
+    "1980 Population": 150142,
+    "1990 Population": 149126,
+    "2000 Population": 165911,
+    "2010 Population": 169190
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 6,
+    "CD Name": "Forest Hills, Rego Park",
+    "1970 Population": 120429,
+    "1980 Population": 112245,
+    "1990 Population": 106996,
+    "2000 Population": 115967,
+    "2010 Population": 113257
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 7,
+    "CD Name": "Flushing, Bay Terrace",
+    "1970 Population": 207589,
+    "1980 Population": 204785,
+    "1990 Population": 220508,
+    "2000 Population": 242952,
+    "2010 Population": 247354
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 8,
+    "CD Name": "Fresh Meadows, Briarwood",
+    "1970 Population": 142468,
+    "1980 Population": 125312,
+    "1990 Population": 132101,
+    "2000 Population": 146594,
+    "2010 Population": 151107
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 9,
+    "CD Name": "Woodhaven, Richmond Hill",
+    "1970 Population": 110367,
+    "1980 Population": 109505,
+    "1990 Population": 112151,
+    "2000 Population": 141608,
+    "2010 Population": 143317
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 10,
+    "CD Name": "Ozone Park, Howard Beach",
+    "1970 Population": 113857,
+    "1980 Population": 105651,
+    "1990 Population": 107768,
+    "2000 Population": 127274,
+    "2010 Population": 122396
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 11,
+    "CD Name": "Bayside, Douglaston, Little Neck",
+    "1970 Population": 127883,
+    "1980 Population": 110963,
+    "1990 Population": 108056,
+    "2000 Population": 116404,
+    "2010 Population": 116431
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 12,
+    "CD Name": "Jamaica, St. Albans, Hollis",
+    "1970 Population": 206639,
+    "1980 Population": 189383,
+    "1990 Population": 201293,
+    "2000 Population": 223602,
+    "2010 Population": 225919
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 13,
+    "CD Name": "Queens Village, Rosedale",
+    "1970 Population": 184647,
+    "1980 Population": 173178,
+    "1990 Population": 177535,
+    "2000 Population": 196284,
+    "2010 Population": 188593
+  },
+  {
+    "Borough": "Queens",
+    "CD Number": 14,
+    "CD Name": "The Rockaways, Broad Channel",
+    "1970 Population": 98228,
+    "1980 Population": 100592,
+    "1990 Population": 100596,
+    "2000 Population": 106686,
+    "2010 Population": 114978
+  },
+  {
+    "Borough": "Staten Island",
+    "CD Number": 1,
+    "CD Name": "Stapleton, Port Richmond",
+    "1970 Population": 135875,
+    "1980 Population": 138489,
+    "1990 Population": 137806,
+    "2000 Population": 162609,
+    "2010 Population": 175756
+  },
+  {
+    "Borough": "Staten Island",
+    "CD Number": 2,
+    "CD Name": "New Springville, South Beach",
+    "1970 Population": 85985,
+    "1980 Population": 105128,
+    "1990 Population": 113944,
+    "2000 Population": 127071,
+    "2010 Population": 132003
+  },
+  {
+    "Borough": "Staten Island",
+    "CD Number": 3,
+    "CD Name": "Tottenville, Woodrow, Great Kills",
+    "1970 Population": 72815,
+    "1980 Population": 108249,
+    "1990 Population": 126956,
+    "2000 Population": 152908,
+    "2010 Population": 160209
+  }
+]
