@@ -1,33 +1,11 @@
+/* global styles */
 * {
   padding: 10px 25px;
   font-family: "PT Sans Narrow";
   text-align: center;
   color: #404040;
 }
-h2, span {
-  text-align: left;
-  font-family: "Fjalla One", sans-serif;
-}
-h2 {
-  font-size: 30px;
-  margin-left: 50px;
-}
-p {
-  text-align: justify;
-  font-size: 18px;
-  width: 600px;
-  margin: auto;
-  margin-bottom: 30px;
-}
-.logo {
-  width: 150px;
-}
-.definitions {
-  padding: 0;
-}
-.definitions h2 {
-  margin-bottom: 0;
-}
+*:focus {outline: none;}
 hr {
   height: 0;
   border: solid .5px transparent;
@@ -36,8 +14,155 @@ hr {
   margin: 50px auto;
 }
 
-#MapRadioButtons{
-  opacity: 0;
+/* typography */
+h2, span, h1 {
+  text-align: left;
+  font-family: "Fjalla One", sans-serif;
+}
+h1 {
+  font-size: 55px;
+  text-align: center;
+  margin-top: -30px;
+}
+h2 {
+  font-size: 30px;
+  margin-left: 150px;
+}
+p {
+  text-align: justify;
+  font-size: 18px;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.definitions {
+  padding: 0;
+}
+.definitions h2 {
+  margin-bottom: 0;
+}
+.definitions p {
+  text-align: left;
+}
+span {
+  float: left;
+  clear: both;
+  margin-left: 150px;
+  font-size: 18px;
+}
+
+/* images and icons */
+.header-image {
+  width: 450px;
+}
+.icon {
+  width: 70px;
+  float: left;
+  margin-left: 50px;
+}
+.truck {
+  transform: rotateY(180deg);
+  padding-top: 12px;
+}
+.earth { margin-top: -15px; }
+.bin { margin-top: -25px; }
+
+/* bar chart color legend */
+.colorLegend-bar {
+  width: 220px;
+  height: 40px;
+  margin: auto;
+  padding: 0;
+}
+.colorLegend-bar div {
+  width: 53px;
+  height: 40px;
+  float: left;
+  padding: 0;
+  margin: 0 1px;
+  font-size: 14px;
+  text-align: center;
+}
+.colorLegend-bar .first {
+  background:#c2e699;
+}
+.colorLegend-bar .second {
+  background:#78c679;
+}
+.colorLegend-bar .third {
+  background:#31a354;
+  color: #F5F7F9;
+}
+.colorLegend-bar .fourth {
+  background:#006837;
+  color: #F5F7F9;
+}
+
+/* map viz */
+#mapViz {
+  margin-left:-220px;
+  padding: 0;
+}
+
+/* map control */
+.selectionTool, form {
+  text-align: left;
+}
+.selectionTool {
+  width: 70%;
+  margin: auto;
+}
+.selectP {
+  font-size: 20px;
+  font-family: "Fjalla One", sans-serif;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+#submit {
+  padding: 10px 0px;
+}
+button {
+  font-size: 16px;
+  padding: 5px 30px;
+  background: #509E52;
+  color: white;
+  letter-spacing: 1px;
+  box-shadow: none;
+  border: solid #509E52 3px;
+  border-radius: 3px;
+}
+button:hover {
+  background: white;
+  color: #509E52;
+}
+#MapRadioButtons{ 
+  opacity: 0; 
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+.mainTool {
+  padding: 0px;
+  text-align: left;
+}
+.optionsP {
+  text-align: left;
+  margin: 0px;
+  padding-left: 0;
+  padding-top: 0;
+  font-family: "Fjalla One", sans-serif;
+}
+select {
+  font-size: 16px;
+  background: white;
+  color: #404040;
+  border: solid 2px #404040;
+  padding: 10px 30px;
+  letter-spacing: 1px;
+  margin: 20px 5px 20px 0px;
+}
+#btnSubmit {
+  margin-bottom: 30px;
 }
 
 div.tooltip {	
@@ -72,4 +197,3 @@ div.tooltip {
   margin: 0px;
   margin-bottom: 0px;
 }
-

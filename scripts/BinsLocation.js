@@ -202,7 +202,7 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
     let orangeColors = d3.scaleQuantize().domain([50, 110]).range(d3.schemeOranges[9]);
     let purpleColors = d3.scaleQuantize().domain([0, 95]).range(d3.schemePurples[9]);
     let blueColors = d3.scaleQuantize().domain([0, 125]).range(d3.schemeBlues[9]);
-
+    let blueColors2 = d3.scaleQuantize().domain([180, 1300]).range(d3.schemeBlues[9]);
     let colorScaleToUse = orangeColors;
 
     if(rateType === 'dRate'){
@@ -211,8 +211,11 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
     else if(rateType === 'cRate'){
         colorScaleToUse = purpleColors;
     }
-    else{
+    else if(rateType === 'cRateMGP'){
         colorScaleToUse = blueColors;
+    }
+    else{
+        colorScaleToUse = blueColors2;
     }
 
     d3.selectAll(".area" + name)
@@ -251,7 +254,13 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,mapData){
                     ///Set Rate to the population. The name of the district is the variable districtName
                 }else{
                     let dataset = recyclingRateDataSet[mapData[name].year][mapData[name].fiscalMonth];
+                    let rateType = mapData[name].rateType;
+                    if(rateType === 'cRateTotal'){
+                        rate =  parseFloat(dataset[districtName][mapData[name].rateType]).toFixed(2);
+                    }
+                    else{
                     rate = dataset[districtName][mapData[name].rateType].toFixed(2);
+                    }
                 }
 
             }
