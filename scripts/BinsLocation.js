@@ -18,6 +18,7 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
     cleanPopulation(populationCDData);
 
     let districtColoringFunction = (d, color) => {
+        d.rateType = "dRate";
         if (coloringDataSet.hasOwnProperty(d.properties.boro_cd)) {
 
             return color(coloringDataSet[d.properties.boro_cd].dRate);
@@ -88,10 +89,19 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
     console.log(window.innerHeight/1.2);
     let mapSize = {width: window.innerWidth, height:window.innerHeight/1.2};
     createMap(mapSvg,"map2",mapSize,dataSets[0],"CommunityDistricts",dataSets[3],districtColoringFunction);
+
     d3.selectAll(".recylingBinmap2")
     .transition().duration(1000)
     .style("opacity", 0);
+
+    d3.selectAll(".areamap2")
+    .style("opacity", 0);
+    
+
     createMap(mapSvg,"map1",mapSize,dataSets[0],"CommunityDistricts",dataSets[3],districtColoringFunction);
+
+    createToolTips(mapSvg ,"map1",districtNames,RecylingRates,mapData);
+    createToolTips(mapSvg ,"map2",districtNames,RecylingRates,mapData);
 
     let mapOnScreen = false;
     let mapExists = false;
@@ -99,7 +109,15 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
     .on("click",()=>{
         
         if(!mapOnScreen){
-            mapOnScreen = true;   
+            mapOnScreen = true;  
+            d3.selectAll(".areamap2")
+            .style("opacity", 1); 
+
+            if(mapData.map2.HideBins === "true"){
+                d3.selectAll(".recylingBinmap2")
+                .style("opacity", 1);
+            }
+
             moveMaps(mapSvg,{x1:-mapSize.width/4,x2:mapSize.width/8});
             d3.select("#MapRadioButtons")
             .style("opacity", 1);
@@ -108,8 +126,22 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
         else{
             mapOnScreen = false;
             moveMaps(mapSvg,{x1:0,y1:0});
+
             d3.select("#MapRadioButtons")
             .style("opacity", 0);
+
+            d3.selectAll(".areamap2")
+                .transition()
+                .delay(2000)
+                .style("opacity", 0);
+
+            if (mapData.map2.HideBins === "true") {
+                d3.selectAll(".recylingBinmap2")
+                    .transition()
+                    .delay(2000)
+                    .style("opacity", 0);
+            }
+
             d3.select("#secondMap").text("Show Second Map");
             document.getElementById("radioButton1").checked = true;
         }
@@ -124,6 +156,14 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
   //creates a map based on the datasets supplied.
   function createMap(svg,name,size,mapDataSet, mapDataSetObjectName, recylingBinDataSet,areaFillFunction, areaClickFunction) {
      // d3.select(".map ").remove(); //Remove existing map on screen
+    console.log("Hello");
+     function tooltipHtml(){	/* function to create html content string in tooltip div. */
+		return "<h4>"+"Hello"+"</h4><table>"+
+			"<tr><td>Low</td><td>"+1+"</td></tr>"+
+			"<tr><td>Average</td><td>"+4+"</td></tr>"+
+			"<tr><td>High</td><td>"+5+"</td></tr>"+
+			"</table>";
+	}
 
       let color = d3.scaleQuantize().domain([60, 100]).range(d3.schemeOranges[9]);
 
@@ -133,11 +173,14 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
 
       let count = -1;
 
+     
+    
       
       svg.selectAll(".area") //Draw the bouroughs on the screen
           .data(area.features)
           .enter()
           .append("path")
+          .attr("class", "area")
           .attr("class", "area" + name)
           .attr("d", path)
           .attr("fill",d => areaFillFunction(d,color))
@@ -151,16 +194,6 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
           .attr("d", path)
           .attr("class", "recylingBin" + name)
           .attr("fill", "green");
-      
-
-      if (name === "map2"){
-        let map1XTranslate = -size.width/4;
-        let map2XTranslate = size.width/8;
-        let movementDuration = 2000;
-
-     //   moveMaps(svg,{x1:map1XTranslate,x2:map2XTranslate});
-
-      }
       
       
 }
@@ -185,7 +218,7 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
     d3.selectAll(".area" + name)
     .transition().duration(1000)
     .attr("fill",(d)=>{
-
+        d.rateType = rateType;
         if(districtNames.hasOwnProperty(d.properties.boro_cd)){
             return colorScaleToUse(recyclingRateDataSet[districtNames[d.properties.boro_cd]][rateType]);
         }
@@ -194,6 +227,61 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
         }
 
     });
+}
+
+function createToolTips(svg,name, districtNames, recyclingRateDataSet,mapData){
+    var div = d3.select("body")
+	.append("div") 
+    .attr("class", "tooltip")        
+    .style("opacity", 0);  
+    
+
+
+    svg.selectAll(".area" + name) 
+        .on("mouseover", function (d) {
+            let districtName = d.properties.boro_cd;
+
+            let bins = 0;
+            let rate = "unknown";
+
+            if (districtNames.hasOwnProperty(districtName)) {
+                districtName = districtNames[districtName];
+
+                if(mapData[name].rateType === "cdPopulation"){
+                    ///Set Rate to the population. The name of the district is the variable districtName
+                }else{
+                    let dataset = recyclingRateDataSet[mapData[name].year][mapData[name].fiscalMonth];
+                    rate = dataset[districtName][mapData[name].rateType].toFixed(2);
+                }
+
+            }
+ 
+            d3.select(this)
+                .attr("opacity", 0.5);
+
+            div.transition()
+                .duration(500)
+                .style("opacity", 0);
+
+            div.transition()
+                .duration(200)
+                .style("opacity", .9);
+
+            div.html(
+                "<h2 class = 'mapToolTipTitle'>District: " + districtName + "</h2>" +
+                "<p class='mapToolTipText'>Recycling Bins: "+bins+"</p>" +
+                "<p class='mapToolTipText'>"+"Value"+": "+rate+"</p>" )
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        })
+        .on("mouseleave", function (d) {
+            d3.select(this)
+                .attr("opacity", 1);
+
+            div.transition()
+                .style("opacity", 0);
+
+        });
 }
 
 
@@ -218,6 +306,7 @@ function moveMaps(svg,xLocations,duration){
       .transition().duration(movementDuration)
       .attr("transform", "translate(" + map2XTranslate+ "," + 0 + ")");
 }
+
 
 
 function populationMap(name,districtNames, populationData){

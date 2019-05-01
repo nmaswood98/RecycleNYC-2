@@ -39,3 +39,37 @@ hr {
 #MapRadioButtons{
   opacity: 0;
 }
+
+div.tooltip {	
+  position: absolute;			
+  text-align: center;			
+  width: 150px;					
+  height: 100px;					
+  padding: 2px;				
+  font: 12px sans-serif;		
+  color: white;
+  background: rgb(12, 98, 211);	
+  border: 0px;		
+  border-radius: 8px;			
+  pointer-events: none;			
+}
+
+.mapToolTipTitle{
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  margin: 0px;
+  padding: 5px 0px 5px 0px;
+}
+
+.mapToolTipText{
+  
+  color: white;
+  text-align: center;
+  width: 150px;
+  padding: 0px;
+  font-size: 20px;
+  margin: 0px;
+  margin-bottom: 0px;
+}
+
