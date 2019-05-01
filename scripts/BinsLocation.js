@@ -4,16 +4,21 @@
 //const recylingBins = require('../RecyclingBinsTopoJson.json'); //Contains the topoJson of the RecylingBinLocation
 //const communityDistricts = require('../CommunityDistricts.json');
 
-let dataSetsToLoad = [d3.json("CommunityDistricts.json"), d3.json("DiversionRate.json"),d3.json("BoroughBoundaries.json"),
-                      d3.json("RecyclingBinsTopoJson.json"),d3.json("RecyclingRates.json"),d3.json("DistrictNumbers.json"),
-                      d3.json("data/CD_Population.json")];
+let dataSetsToLoad = [d3.json("data/CommunityDistricts.json"), d3.json("data/DiversionRate.json"),d3.json("data/BoroughBoundaries.json"),
+                      d3.json("data/RecyclingBinsTopoJson.json"),d3.json("data/RecyclingRates.json"),d3.json("data/DistrictNumbers.json"),
+                      d3.json("data/CD_Population.json"),d3.json("data/BinsInDistrict.json")];
 
 
 Promise.all(dataSetsToLoad).then(function(dataSets) {
+    let numOfBinsInDistrict = dataSets[7];
     let districtNames = dataSets[5];
     let RecylingRates = dataSets[4];
     let coloringDataSet = dataSets[1];
     let populationCDData = dataSets[6];//https://shofi384.github.io/RecycleNYC/data/CD_Population.json
+
+
+    let BinData = dataSets[3];
+
 
     cleanPopulation(populationCDData);
 
@@ -100,8 +105,8 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
 
     createMap(mapSvg,"map1",mapSize,dataSets[0],"CommunityDistricts",dataSets[3],districtColoringFunction);
 
-    createToolTips(mapSvg ,"map1",districtNames,RecylingRates,mapData);
-    createToolTips(mapSvg ,"map2",districtNames,RecylingRates,mapData);
+    createToolTips(mapSvg ,"map1",districtNames,RecylingRates,numOfBinsInDistrict,mapData);
+    createToolTips(mapSvg ,"map2",districtNames,RecylingRates,numOfBinsInDistrict,mapData);
 
     let mapOnScreen = false;
     let mapExists = false;
@@ -148,9 +153,24 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
 
     });
 
+    //Used this to get the amount of bins in every district
+  /*
+    let obj = {};
+    mapSvg.selectAll(".areamap1") //Draw the bouroughs on the screen
+          .each(function(d){//coordinates
+            let count = 0;
+            BinData.objects.RecylingBinData.geometries.forEach((e)=>{
+                if(d3.geoContains(d,e.coordinates)){
+                    count++;
+                }
+            });
+            console.log(count);
+            obj[d.properties.boro_cd] = count;
+           
+          });
+console.log(obj);
+*/
 
-
-    
   });
 
   //creates a map based on the datasets supplied.
@@ -183,8 +203,7 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
           .attr("class", "area")
           .attr("class", "area" + name)
           .attr("d", path)
-          .attr("fill",d => areaFillFunction(d,color))
-          .on('click',d => areaClickFunction(d));
+          .attr("fill",d => areaFillFunction(d,color));
 
           
 
@@ -232,7 +251,7 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
     });
 }
 
-function createToolTips(svg,name, districtNames, recyclingRateDataSet,mapData){
+function createToolTips(svg,name, districtNames, recyclingRateDataSet,numOfBinsInDistrict,mapData){
     var div = d3.select("body")
 	.append("div") 
     .attr("class", "tooltip")        
@@ -243,8 +262,8 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,mapData){
     svg.selectAll(".area" + name) 
         .on("mouseover", function (d) {
             let districtName = d.properties.boro_cd;
-
-            let bins = 0;
+            console.log(numOfBinsInDistrict);
+            let bins = numOfBinsInDistrict[d.properties.boro_cd];
             let rate = "unknown";
 
             if (districtNames.hasOwnProperty(districtName)) {
