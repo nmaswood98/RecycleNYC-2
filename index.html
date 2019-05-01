@@ -5,6 +5,7 @@
 	<title>RecycleNYC</title>
 
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|PT+Sans+Narrow" rel="stylesheet">
   <script type="text/javascript" src="./scripts/BarChart.js"></script>
   <script  src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
@@ -14,86 +15,83 @@
 </head>
 
 <body>
-
-  <h1>Recycle NYC</h1>
+  <img src="logo.png" class="logo" alt="Recycle NYC"></img>
 	<div class="info">
-		<h2>Definitions:</h2>
-		<h3>Diversion Rate:</h3>
-		<p>percentage of total municipal solid waste collected by the Department of Sanitation that is disposed of by recycling</p>
-		<h3>Capture Rate:</h3>
-		<p>percentage of total Paper or Metal/Glass/Plastic in the waste stream that is disposed of by recycling</p>
-	</div>
-  <div class="mainGrid">
-    <div class="grid-container">
-      <div class="nav">
-        <img src="logo.png"></img></br>
-        <button onclick="changeId()">Bar Chart</button>
-        <button onclick="changeId()">Density Map</button>
-        <button onclick="changeId()">Bins Ratio</button>
-      </div>
-      <div id="barChart" class="body">
-        <script>
-          $.getJSON('./data/BarChart.json', dataset => showBarChart(dataset, '#barChart', 500, 500)).error( () =>
-            console.log('error: json not loaded'));
-        </script>
-      </div>
-      <div class="right"></div>
+    <h2>Project Description</h2>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <hr>
+    <h2>Research Questions</h2>
+    <p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <hr>
+    <div class="definitions">
+      <h2>Definitions</h2>
+      <p><span>Diversion Rate:</span>percentage of total municipal solid waste collected by the Department of Sanitation that is disposed of by recycling</p>
+      <p><span>Capture Rate:</span>percentage of total Paper or Metal/Glass/Plastic in the waste stream that is disposed of by recycling</p>
     </div>
-    <div class='grid-container'>
-      <div class="nav"></div>
-      <div class="para">This visualization shows the recycling behaviour of NYC people relating to their zone in NYC as well as their access to recycling facilities</div>
-      <div class="right"></div>
-    </div>
-
+    <hr>
+    <h2>Correlation Tables</h2>
   </div>
 
-  <h2>NYC Map with Recycling Bins</h2>
+  <!-- the bar chart -->
+  <div class="barchart">
+    <h2>Bar Chart</h2>
+    <p>This visualization shows the recycling behaviour of NYC people relating to their zone in NYC as well as their access to recycling facilities</p>
+    <div id="barChart" class="body">
+      <script>$.getJSON('./data/BarChart.json', dataset => showBarChart(dataset, '#barChart', 600, 400)).error( () =>
+              console.log('error: json not loaded'));
+      </script>
+    </div>
+  </div>
 
-
-	<div id="" ></div>
-
-  <form id= "submit" >
-  <select id="MapType">
-    <option value="Districts">Districts</option>
-    <option value="Bouroughs">Bouroughs</option>
-  </select>
-
-  <select id="Year">
-      <option value="2013">2013</option>
-      <option value="2014">2014</option>
-      <option value="2015">2015</option>
-      <option value="2016">2016</option>
-      <option value="2017">2017</option>
-      <option value="2018">2018</option>
-  </select>
-
-  <select id="FiscalMonth">
-      <option value="7">Jan</option>
-      <option value="8">Feb</option>
-      <option value="9">March</option>
-      <option value="10">April</option>
-      <option value="11">May</option>
-      <option value="12">June</option>
-      <option value="1">July</option>
-      <option value="2">Aug</option>
-      <option value="3">Sept</option>
-      <option value="4">Oct</option>
-      <option value="5">Nov</option>
-      <option value="5">Dec</option>
-  </select>
-
-  <select id="RateSelection">
-      <option value="dRate">Diversion Rate</option>
-      <option value="cRate">Capture Rate</option>
-      <option value="cRateMGP">Capture Rate MGP</option>
-			<option value="cdPopulation">Neighborhood Population</option>
-  </select>
-
-  <input  type="submit">
-</form>
+  <!-- the bin map -->
+  <div class="binmap">
+    <h2>Heatmap with Recycling Bins</h2>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    <div class="selectionTool">
+        <form id= "submit" >
+            <select id="MapType">
+              <option value="Districts">Districts</option>
+              <option value="Bouroughs">Bouroughs</option>
+            </select>
+          
+            <select id="Year">
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+            </select>
+          
+            <select id="FiscalMonth">
+                <option value="7">Jan</option>
+                <option value="8">Feb</option>
+                <option value="9">March</option>
+                <option value="10">April</option>
+                <option value="11">May</option>
+                <option value="12">June</option>
+                <option value="1">July</option>
+                <option value="2">Aug</option>
+                <option value="3">Sept</option>
+                <option value="4">Oct</option>
+                <option value="5">Nov</option>
+                <option value="5">Dec</option>
+            </select>
+          
+            <select id="RateSelection">
+                <option value="dRate">Diversion Rate</option>
+                <option value="cRate">Capture Rate</option>
+                <option value="cRateMGP">Capture Rate MGP</option>
+            </select>
+          
+            <input  type="submit">
+        </form>
+    </div> 
+  </div>
 
 </body>
 
-<footer>@Team Visualization 2019</footer>
+<footer>Recycle NYC - Data Visualization Project - 2019</footer>
 
 </html>

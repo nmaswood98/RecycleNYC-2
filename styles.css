@@ -1,85 +1,37 @@
-/* To color axis unit text*/
-.axisColor text {
-  fill: #FFDAB9;
-}
-
-/* To color axis unit line*/
-.axisColor line {
-  stroke: #ff42bc;
-}
-
-/* To color axis line*/
-.axisColor path {
-  stroke: #bfffe7;
-}
-
-.bar:hover {
-  fill: #e2caaa;
-}
-
-body {
-  background-color: #354154;
-  color: #a3ff87;
+* {
+  padding: 10px 25px;
+  font-family: "PT Sans Narrow";
   text-align: center;
-  min-height: 100vh;
+  color: #404040;
 }
-
-button {
-  background-color: #a3ff87;
-  color: #354154;
-  margin: 2%;
-  cursor: pointer;
-  border-radius: 20px;
-  font-size: 20px;
+h2, span {
+  text-align: left;
+  font-family: "Fjalla One", sans-serif;
 }
-
-button:hover {
-  background-color: green;
+h2 {
+  font-size: 30px;
+  margin-left: 50px;
 }
-
-footer {
-  background-color: #282c34;
-  height:20px;
-  width: 100%;
-  color:  #FFDAB9;
-  text-align: center;
-  bottom: 0;
-  position: fixed;
+p {
+  text-align: justify;
+  font-size: 18px;
+  width: 600px;
+  margin: auto;
+  margin-bottom: 30px;
 }
-
-img {
-  margin: 5%;
-  height: 80px;
+.logo {
+  width: 150px;
 }
-
-#main {
-  margin: 1px;
-  shape-margin: solid;
+.definitions {
+  padding: 0;
 }
-
-.mainGrid {
-  display: grid;
-  grid-template-rows: 5fr 1fr;
+.definitions h2 {
+  margin-bottom: 0;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: 2fr 12fr 1fr;
-  background-color: #354154;
-  color: #a3ff87;
-}
-
-.grid-container > div {
-  background-color: #282c34;
-  color: #a3ff87;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.para {
-  font-size: 25px;
-}
-
-.info{
-  margin:1px;
+hr {
+  height: 0;
+  border: solid .5px transparent;
+  padding: 0;
+  width: 700px;
+  margin: 50px auto;
 }
