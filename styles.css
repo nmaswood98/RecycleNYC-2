@@ -4,77 +4,82 @@
   font-family: "PT Sans Narrow";
   text-align: center;
   color: #404040;
-}
-*:focus {outline: none;}
-hr {
+  }
+  *:focus {outline: none;}
+  hr {
   height: 0;
   border: solid .5px transparent;
   padding: 0;
   width: 700px;
   margin: 50px auto;
-}
-
-/* typography */
-h2, span, h1 {
+  }
+  
+  /* typography */
+  h2, span, h1 {
   text-align: left;
   font-family: "Fjalla One", sans-serif;
-}
-h1 {
+  }
+  h1 {
   font-size: 55px;
   text-align: center;
   margin-top: -30px;
-}
-h2 {
+  }
+  h2 {
   font-size: 30px;
   margin-left: 150px;
-}
-p {
+  }
+  p {
   text-align: justify;
   font-size: 18px;
   width: 600px;
   margin: auto;
   margin-bottom: 30px;
-}
-.definitions {
+  }
+  .definitions {
   padding: 0;
-}
-.definitions h2 {
+  }
+  .definitions h2 {
   margin-bottom: 0;
-}
-.definitions p {
+  }
+  .definitions p {
   text-align: left;
-}
-span {
+  }
+  span {
   float: left;
   clear: both;
   margin-left: 150px;
   font-size: 18px;
-}
-
-/* images and icons */
-.header-image {
+  }
+  
+  /* images and icons */
+  .header-image {
   width: 450px;
-}
-.icon {
+  }
+  .icon {
   width: 70px;
   float: left;
   margin-left: 50px;
-}
-.truck {
+  }
+  .truck {
   transform: rotateY(180deg);
   padding-top: 12px;
-}
-.earth { margin-top: -15px; }
-.bin { margin-top: -25px; }
-
-/* bar chart color legend */
-.colorLegend-bar {
+  }
+  .earth { margin-top: -15px; }
+  .bin { margin-top: -25px; }
+  
+  /* bar chart color legend */
+  .captureP {
+  text-align: center;
+  padding: 0;
+  margin-bottom: 5px;
+  }
+  .colorLegend-bar {
   width: 220px;
   height: 40px;
   margin: auto;
   padding: 0;
-}
-.colorLegend-bar div {
+  }
+  .colorLegend-bar div {
   width: 53px;
   height: 40px;
   float: left;
@@ -82,46 +87,46 @@ span {
   margin: 0 1px;
   font-size: 14px;
   text-align: center;
-}
-.colorLegend-bar .first {
+  }
+  .colorLegend-bar .first {
   background:#c2e699;
-}
-.colorLegend-bar .second {
+  }
+  .colorLegend-bar .second {
   background:#78c679;
-}
-.colorLegend-bar .third {
+  }
+  .colorLegend-bar .third {
   background:#31a354;
   color: #F5F7F9;
-}
-.colorLegend-bar .fourth {
+  }
+  .colorLegend-bar .fourth {
   background:#006837;
   color: #F5F7F9;
-}
-
-/* map viz */
-#mapViz {
+  }
+  
+  /* map viz */
+  #mapViz {
   margin-left:-220px;
   padding: 0;
-}
-
-/* map control */
-.selectionTool, form {
+  }
+  
+  /* map control */
+  .selectionTool, form {
   text-align: left;
-}
-.selectionTool {
+  }
+  .selectionTool {
   width: 70%;
   margin: auto;
-}
-.selectP {
+  }
+  .selectP {
   font-size: 20px;
   font-family: "Fjalla One", sans-serif;
   margin: 0 0 20px 0;
   padding: 0;
-}
-#submit {
+  }
+  #submit {
   padding: 10px 0px;
-}
-button {
+  }
+  button {
   font-size: 16px;
   padding: 5px 30px;
   background: #509E52;
@@ -130,29 +135,29 @@ button {
   box-shadow: none;
   border: solid #509E52 3px;
   border-radius: 3px;
-}
-button:hover {
+  }
+  button:hover {
   background: white;
   color: #509E52;
-}
-#MapRadioButtons{ 
-  opacity: 0; 
+  }
+  #MapRadioButtons{
+  opacity: 0;
   text-align: left;
   padding: 0;
   margin: 0;
-}
-.mainTool {
+  }
+  .mainTool {
   padding: 0px;
   text-align: left;
-}
-.optionsP {
+  }
+  .optionsP {
   text-align: left;
   margin: 0px;
   padding-left: 0;
   padding-top: 0;
   font-family: "Fjalla One", sans-serif;
-}
-select {
+  }
+  select {
   font-size: 16px;
   background: white;
   color: #404040;
@@ -160,40 +165,7 @@ select {
   padding: 10px 30px;
   letter-spacing: 1px;
   margin: 20px 5px 20px 0px;
-}
-#btnSubmit {
+  }
+  #btnSubmit {
   margin-bottom: 30px;
-}
-
-div.tooltip {	
-  position: absolute;			
-  text-align: center;			
-  width: 150px;					
-  height: 100px;					
-  padding: 2px;				
-  font: 12px sans-serif;		
-  color: white;
-  background: rgb(12, 98, 211);	
-  border: 0px;		
-  border-radius: 8px;			
-  pointer-events: none;			
-}
-
-.mapToolTipTitle{
-  color: white;
-  font-size: 25px;
-  text-align: center;
-  margin: 0px;
-  padding: 5px 0px 5px 0px;
-}
-
-.mapToolTipText{
-  
-  color: white;
-  text-align: center;
-  width: 150px;
-  padding: 0px;
-  font-size: 20px;
-  margin: 0px;
-  margin-bottom: 0px;
-}
+  }

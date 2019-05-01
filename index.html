@@ -1,123 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>RecycleNYC</title>
+  <meta charset="UTF-8">
+  <title>RecycleNYC</title>
 
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Fjalla+One|PT+Sans+Narrow" rel="stylesheet">
-  <script type="text/javascript" src="./scripts/BarChart.js"></script>
-  <script  src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script src="https://d3js.org/topojson.v1.min.js"></script>
-  <script type="text/javascript" src="./scripts/BinsLocation.js"></script>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One|PT+Sans+Narrow" rel="stylesheet">
+<script type="text/javascript" src="./scripts/BarChart.js"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script type="text/javascript" src="./scripts/BinsLocation.js"></script>
 
 </head>
 
 <body>
-  <!-- <img src="logo.png" class="logo" alt="Recycle NYC"></img> -->
-  <img src="assets/header-image.jpg" class="header-image">
-  <h1>Recycle NYC</h1>
-  
-  <div class="info">
-    <img class="icon truck" src="assets/garbage-truck.svg">
-    <h2>Project Description</h2>
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    <hr>
-    <img class="icon earth" src="assets/planet-earth.svg">
-    <h2>Research Questions</h2>
-    <p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    <p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    <hr>
-    <div class="definitions">
-      <img class="icon bin" src="assets/recycling-bin.svg">
-      <h2>Definitions</h2>
-      <span>Capture Rate:</span><p>Percentage of total Paper, Metal, Glass, and Plastic in the waste stream that is disposed of as recycling</p>
-      <span>Diversion Rate:</span><p>Percentage of total solid waste collected by the Department of Sanitation that is disposed of as non-recycling, but converted to recycling waste after disposal.</p>
-      <span>Capture Rate MGP:</span><p>Capture rate for Metal, Glass, and Plastic only.  </p>
-    </div>
-    <hr>
-    <img class="icon bin" src="assets/leaf.svg">
-    <h2>Correlation Tables</h2>
-  </div>
+<!-- <img src="logo.png" class="logo" alt="Recycle NYC"></img> -->
+<img src="assets/header-image.jpg" class="header-image">
+<h1>Recycle NYC</h1>
+<div class="info">
+<img class="icon truck" src="assets/garbage-truck.svg">
+<h2>Project Description</h2>
+<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<hr>
+<img class="icon earth" src="assets/planet-earth.svg">
+<h2>Research Questions</h2>
+<p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<hr>
+<div class="definitions">
+<img class="icon bin" src="assets/recycling-bin.svg">
+<h2>Definitions</h2>
+<span>Capture Rate:</span><p>Percentage of total Paper, Metal, Glass, and Plastic in the waste stream that is disposed of as recycling</p>
+<span>Diversion Rate:</span><p>Percentage of total solid waste collected by the Department of Sanitation that is disposed of as non-recycling, but converted to recycling waste after disposal.</p>
+<span>Capture Rate MGP:</span><p>Capture rate for Metal, Glass, and Plastic only. </p>
+</div>
+<hr>
+<img class="icon bin" src="assets/leaf.svg">
+<h2>Correlation Tables</h2>
+</div>
 
-  <!-- the bar chart -->
-  <div class="barchart">
-    <h2>Bar Chart</h2>
-    <p>This visualization displays the number of recycling bins in the city boroughs in relation to the total capture rate per borough. The height of the bars represents number of bins, and the color of each bar represents the capture rate.</p>
-    <!-- <p>Color Legend</p> -->
-    <div class="colorLegend-bar">
-      <div class="first">0-59%</div>
-      <div class="second">60-69%</div>
-      <div class="third">70-79%</div>
-      <div class="fourth">+80%</div>
-    </div>
-    <div id="barChart" class="body">
-      <script>$.getJSON('./data/BarChart.json', dataset => showBarChart(dataset, '#barChart', 600, 400)).error( () =>
-              console.log('error: json not loaded'));
-      </script>
-    </div>
-  </div>
+<!-- the bar chart -->
+<div class="barchart">
+<h2>Bar Chart</h2>
+<p>This visualization displays the number of recycling bins in the city boroughs in relation to the total capture rate per borough. The height of the bars represents number of bins, and the color of each bar represents the capture rate.</p>
+<!-- <p>Color Legend</p> -->
+<p class="captureP">Capture Rate</p>
+<div class="colorLegend-bar">
+<div class="first">0-59%</div>
+<div class="second">60-69%</div>
+<div class="third">70-79%</div>
+<div class="fourth">+80%</div>
+</div>
+<div id="barChart" class="body">
+<script>$.getJSON('./data/BarChart.json', dataset => showBarChart(dataset, '#barChart', 600, 400)).error( () =>
+console.log('error: json not loaded'));
+</script>
+</div>
+</div>
 
-  <!-- the bin map -->
-  <div class="binmap">
-    <h2>Heatmap with Recycling Bins</h2>
-    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-    <div class="selectionTool">
-        <p class="selectP">Selection Tool</p>
-        <button id="secondMap" >Show Second Map</button>
-        <form id= "submit" >
-          <!-- 2 map functionality -->
-          <div id = "MapRadioButtons">
-            <input id="radioButton1" type="radio" name="mapSelection" value="map1" checked="checked" >Left Map<br>
-            <input id="radioButton2" type="radio" name="mapSelection" value="map2">Right Map<br>
-          </div>
-          <!-- main tool -->
-          <div class="mainTool">
-              <select id="HideBins">
-                  <option value="true">Show Recycling Bins</option>
-                  <option value="false">Hide Recyling Bins</option>
-                </select>
-              
-                <select id="Year">
-                    <option value="2013">2013</option>
-                    <option value="2014">2014</option>
-                    <option value="2015">2015</option>
-                    <option value="2016">2016</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                </select>
-              
-                <select id="FiscalMonth">
-                    <option value="7">Jan</option>
-                    <option value="8">Feb</option>
-                    <option value="9">March</option>
-                    <option value="10">April</option>
-                    <option value="11">May</option>
-                    <option value="12">June</option>
-                    <option value="1">July</option>
-                    <option value="2">Aug</option>
-                    <option value="3">Sept</option>
-                    <option value="4">Oct</option>
-                    <option value="5">Nov</option>
-                    <option value="5">Dec</option>
-                </select>
-              
-                <select id="RateSelection">
-                    <option value="dRate">Diversion Rate</option>
-                    <option value="cRate">Capture Rate</option>
-                    <option value="cRateMGP">Capture Rate MGP</option>
-                    <option value="cRateTotal">Capture Rate Total</option>
-                    <option value="cdPopulation">Neighborhood Population</option>
-                </select>
-          </div> 
-          <!-- end of main tool -->
-            
-          <button  type="submit" id="btnSubmit">Submit</button>
-          <div id="mapViz"></div>
-        </form>
-    </div> 
-  </div>
+<!-- the bin map -->
+<div class="binmap">
+<h2>Heatmap with Recycling Bins</h2>
+<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<div class="selectionTool">
+<p class="selectP">Selection Tool</p>
+<button id="secondMap" >Show Second Map</button>
+<form id= "submit" >
+<!-- 2 map functionality -->
+<div id = "MapRadioButtons">
+<input id="radioButton1" type="radio" name="mapSelection" value="map1" checked="checked" >Left Map<br>
+<input id="radioButton2" type="radio" name="mapSelection" value="map2">Right Map<br>
+</div>
+<!-- main tool -->
+<div class="mainTool">
+<select id="HideBins">
+<option value="true">Show Recycling Bins</option>
+<option value="false">Hide Recyling Bins</option>
+</select>
+<select id="Year">
+<option value="2013">2013</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+</select>
+<select id="FiscalMonth">
+<option value="7">Jan</option>
+<option value="8">Feb</option>
+<option value="9">March</option>
+<option value="10">April</option>
+<option value="11">May</option>
+<option value="12">June</option>
+<option value="1">July</option>
+<option value="2">Aug</option>
+<option value="3">Sept</option>
+<option value="4">Oct</option>
+<option value="5">Nov</option>
+<option value="5">Dec</option>
+</select>
+<select id="RateSelection">
+<option value="dRate">Diversion Rate</option>
+<option value="cRate">Capture Rate</option>
+<option value="cRateMGP">Capture Rate MGP</option>
+<option value="cdPopulation">Neighborhood Population</option>
+</select>
+</div>
+<!-- end of main tool -->
+<button type="submit" id="btnSubmit">Submit</button>
+<div id="mapViz"></div>
+</form>
+</div>
+</div>
 
 </body>
 

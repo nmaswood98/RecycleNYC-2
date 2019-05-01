@@ -86,7 +86,7 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
     let boroughColoringFunction = (d, color) => {count++; return color(diversionRates[count])};
 
 
-    let mapSvg = d3.select('body').append('svg') //the Svg where main d3 goes
+    let mapSvg = d3.select('#mapViz').append('svg') //the Svg where main d3 goes
     .style("background-color", "white")
     .attr("class", "map")
     .attr("width", window.innerWidth)
