@@ -64,54 +64,57 @@
     <h2>Heatmap with Recycling Bins</h2>
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <div class="selectionTool">
+        <p class="selectP">Selection Tool</p>
+        <button id="secondMap" >Show Second Map</button>
         <form id= "submit" >
-
+          <!-- 2 map functionality -->
           <div id = "MapRadioButtons">
             <input id="radioButton1" type="radio" name="mapSelection" value="map1" checked="checked" >Left Map<br>
             <input id="radioButton2" type="radio" name="mapSelection" value="map2">Right Map<br>
           </div>
-          
-
-            <select id="HideBins">
-              <option value="true">Show Recycling Bins</option>
-              <option value="false">Hide Recyling Bins</option>
-            </select>
-          
-            <select id="Year">
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-            </select>
-          
-            <select id="FiscalMonth">
-                <option value="7">Jan</option>
-                <option value="8">Feb</option>
-                <option value="9">March</option>
-                <option value="10">April</option>
-                <option value="11">May</option>
-                <option value="12">June</option>
-                <option value="1">July</option>
-                <option value="2">Aug</option>
-                <option value="3">Sept</option>
-                <option value="4">Oct</option>
-                <option value="5">Nov</option>
-                <option value="5">Dec</option>
-            </select>
-          
-            <select id="RateSelection">
-                <option value="dRate">Diversion Rate</option>
-                <option value="cRate">Capture Rate</option>
-                <option value="cRateMGP">Capture Rate MGP</option>
-                <option value="cdPopulation">Neighborhood Population</option>
-            </select>
-          
-            <input  type="submit">
-         
+          <!-- main tool -->
+          <div class="mainTool">
+              <select id="HideBins">
+                  <option value="true">Show Recycling Bins</option>
+                  <option value="false">Hide Recyling Bins</option>
+                </select>
+              
+                <select id="Year">
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                </select>
+              
+                <select id="FiscalMonth">
+                    <option value="7">Jan</option>
+                    <option value="8">Feb</option>
+                    <option value="9">March</option>
+                    <option value="10">April</option>
+                    <option value="11">May</option>
+                    <option value="12">June</option>
+                    <option value="1">July</option>
+                    <option value="2">Aug</option>
+                    <option value="3">Sept</option>
+                    <option value="4">Oct</option>
+                    <option value="5">Nov</option>
+                    <option value="5">Dec</option>
+                </select>
+              
+                <select id="RateSelection">
+                    <option value="dRate">Diversion Rate</option>
+                    <option value="cRate">Capture Rate</option>
+                    <option value="cRateMGP">Capture Rate MGP</option>
+                    <option value="cdPopulation">Neighborhood Population</option>
+                </select>
+          </div> 
+          <!-- end of main tool -->
+            
+          <button  type="submit" id="btnSubmit">Submit</button>
+          <div id="mapViz"></div>
         </form>
-        <Button id="secondMap" >Show Second Map</Button>
     </div> 
   </div>
 
