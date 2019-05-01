@@ -36,7 +36,16 @@ function showBarChart(dataset, selector, w, h) {
 	.attr('width', barWidth)
 	.attr('height', d => d.NumberOfBins)
 	// Change the color of each bar depending on its 'Capture Rate' attribute
-	.attr('fill', d => `rgb(0, ${d['Capture Rate']*2.55}, 0)`)
+	.attr("fill", function(d) {
+    if (d.CaptureRate < 60) {
+      return "#c2e699";
+    } else if (d.CaptureRate < 70) {
+      return "#78c679";
+    } else if (d.CaptureRate < 80) {
+			return "#31a354";
+		}
+    return "#006837";
+  })
 	// To add hover effect
 	.attr('class', 'bar')
 	// To add tooltip
@@ -51,8 +60,8 @@ function showBarChart(dataset, selector, w, h) {
 	.text(d => d.Borough)
 	.attr('x', (d, index) => index*(barWidth+barGaps)+30)
 	.attr('y', d => h-d.NumberOfBins-15)
-	.attr('fill', 'white')
-	.style('font-size', '20px');
+	.attr('fill', '#404040')
+	.style('font-size', '18px');
 
 	// Set the X-axis
 	// const xAxis = d3.axisBottom(xScale);
@@ -71,47 +80,47 @@ function showBarChart(dataset, selector, w, h) {
 
 
 	// Add legend
-	var w1 = 300, h1 = 50;
+	// var w1 = 300, h1 = 50;
 
-    var key = svg.append("svg")
-      .attr("width", w1)
-      .attr("height", h1)
-      .attr("class", "axisColor");
+  //   var key = svg.append("svg")
+  //     .attr("width", w1)
+  //     .attr("height", h1)
+  //     .attr("class", "axisColor");
 
-    var legend = key.append("defs")
-      .append("svg:linearGradient")
-      .attr("id", "gradient")
-      .attr("x1", "0%")
-      .attr("y1", "100%")
-      .attr("x2", "100%")
-      .attr("y2", "100%")
-      .attr("spreadMethod", "pad");
+  //   var legend = key.append("defs")
+  //     .append("svg:linearGradient")
+  //     .attr("id", "gradient")
+  //     .attr("x1", "0%")
+  //     .attr("y1", "100%")
+  //     .attr("x2", "100%")
+  //     .attr("y2", "100%")
+  //     .attr("spreadMethod", "pad");
 
-    legend.append("stop")
-      .attr("offset", "0%")
-      .attr("stop-color", "rgb(0, 0, 0)")
-      .attr("stop-opacity", 1);
+  //   legend.append("stop")
+  //     .attr("offset", "0%")
+  //     .attr("stop-color", "rgb(0, 0, 0)")
+  //     .attr("stop-opacity", 1);
 
-    legend.append("stop")
-      .attr("offset", "33%")
-      .attr("stop-color", "rgb(0, 85, 0)")
-      .attr("stop-opacity", 1);
+  //   legend.append("stop")
+  //     .attr("offset", "33%")
+  //     .attr("stop-color", "rgb(0, 85, 0)")
+  //     .attr("stop-opacity", 1);
 
-    legend.append("stop")
-      .attr("offset", "66%")
-      .attr("stop-color", "rgb(0, 170, 0)")
-      .attr("stop-opacity", 1);
+  //   legend.append("stop")
+  //     .attr("offset", "66%")
+  //     .attr("stop-color", "rgb(0, 170, 0)")
+  //     .attr("stop-opacity", 1);
 
-    legend.append("stop")
-      .attr("offset", "100%")
-      .attr("stop-color", "rgb(0, 255, 0)")
-      .attr("stop-opacity", 1);
+  //   legend.append("stop")
+  //     .attr("offset", "100%")
+  //     .attr("stop-color", "rgb(0, 255, 0)")
+  //     .attr("stop-opacity", 1);
 
-    key.append("rect")
-      .attr("width", w1)
-      .attr("height", h1 - 30)
-      .style("fill", "url(#gradient)")
-      .attr("transform", "translate(70, 10)");
+  //   key.append("rect")
+  //     .attr("width", w1)
+  //     .attr("height", h1 - 30)
+  //     .style("fill", "url(#gradient)")
+  //     .attr("transform", "translate(70, 10)");
 
     var y = d3.scaleLinear()
       .range([250, 0])

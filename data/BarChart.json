@@ -2,35 +2,35 @@
   {
     "Borough": "Bronx",
     "NumberOfBins": 107,
-    "Capture Rate": 51.13304902,
+    "CaptureRate": 51,
     "Population": "2,717,758",
     "Pop(Thousand)": 2717.758
   },
   {
     "Borough": "Brooklyn",
     "NumberOfBins": 94,
-    "Capture Rate": 63.7725,
+    "CaptureRate": 64,
     "Population": "4,970,026",
     "Pop(Thousand)": 4970.026
   },
   {
     "Borough": "Manhattan",
     "NumberOfBins": 183,
-    "Capture Rate": 64.19788235,
+    "CaptureRate": 64,
     "Population": "3,123,068",
     "Pop(Thousand)": 3123.068
   },
   {
     "Borough": "Queens",
     "NumberOfBins": 116,
-    "Capture Rate": 71.69596218,
+    "CaptureRate": 72,
     "Population": "4,460,101",
     "Pop(Thousand)": 4460.101
   },
   {
     "Borough": "Staten Island",
     "NumberOfBins": 40,
-    "Capture Rate": 82.22692157,
+    "CaptureRate": 82,
     "Population": "912,458",
     "Pop(Thousand)": 912.458
   }

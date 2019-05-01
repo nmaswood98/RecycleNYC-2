@@ -4,13 +4,18 @@
   text-align: center;
   color: #404040;
 }
-h2, span {
+h2, span, h1 {
   text-align: left;
   font-family: "Fjalla One", sans-serif;
 }
+h1 {
+  font-size: 55px;
+  text-align: center;
+  margin-top: -30px;
+}
 h2 {
   font-size: 30px;
-  margin-left: 50px;
+  margin-left: 150px;
 }
 p {
   text-align: justify;
@@ -18,6 +23,24 @@ p {
   width: 600px;
   margin: auto;
   margin-bottom: 30px;
+}
+.header-image {
+  width: 450px;
+}
+.icon {
+  width: 70px;
+  float: left;
+  margin-left: 50px;
+}
+.truck {
+  transform: rotateY(180deg);
+  padding-top: 12px;
+}
+.earth {
+  margin-top: -15px;
+}
+.bin {
+  margin-top: -25px;
 }
 .logo {
   width: 150px;
@@ -28,6 +51,15 @@ p {
 .definitions h2 {
   margin-bottom: 0;
 }
+.definitions p {
+  text-align: left;
+}
+span {
+  float: left;
+  clear: both;
+  margin-left: 150px;
+  font-size: 18px;
+}
 hr {
   height: 0;
   border: solid .5px transparent;
@@ -35,7 +67,37 @@ hr {
   width: 700px;
   margin: 50px auto;
 }
-
+/* bar chart */
+.colorLegend-bar {
+  width: 220px;
+  height: 40px;
+  margin: auto;
+  padding: 0;
+}
+.colorLegend-bar div {
+  width: 53px;
+  height: 40px;
+  float: left;
+  padding: 0;
+  margin: 0 1px;
+  font-size: 14px;
+  text-align: center;
+}
+.colorLegend-bar .first {
+  background:#c2e699;
+}
+.colorLegend-bar .second {
+  background:#78c679;
+}
+.colorLegend-bar .third {
+  background:#31a354;
+  color: #F5F7F9;
+}
+.colorLegend-bar .fourth {
+  background:#006837;
+  color: #F5F7F9;
+}
 #MapRadioButtons{
   opacity: 0;
+
 }

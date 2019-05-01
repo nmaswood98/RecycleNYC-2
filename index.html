@@ -15,28 +15,43 @@
 </head>
 
 <body>
-  <img src="logo.png" class="logo" alt="Recycle NYC"></img>
-	<div class="info">
+  <!-- <img src="logo.png" class="logo" alt="Recycle NYC"></img> -->
+  <img src="assets/header-image.jpg" class="header-image">
+  <h1>Recycle NYC</h1>
+  
+  <div class="info">
+    <img class="icon truck" src="assets/garbage-truck.svg">
     <h2>Project Description</h2>
     <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <hr>
+    <img class="icon earth" src="assets/planet-earth.svg">
     <h2>Research Questions</h2>
     <p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     <hr>
     <div class="definitions">
+      <img class="icon bin" src="assets/recycling-bin.svg">
       <h2>Definitions</h2>
-      <p><span>Diversion Rate:</span>percentage of total municipal solid waste collected by the Department of Sanitation that is disposed of by recycling</p>
-      <p><span>Capture Rate:</span>percentage of total Paper or Metal/Glass/Plastic in the waste stream that is disposed of by recycling</p>
+      <span>Capture Rate:</span><p>Percentage of total Paper, Metal, Glass, and Plastic in the waste stream that is disposed of as recycling</p>
+      <span>Diversion Rate:</span><p>Percentage of total solid waste collected by the Department of Sanitation that is disposed of as non-recycling, but converted to recycling waste after disposal.</p>
+      <span>Capture Rate MGP:</span><p>Capture rate for Metal, Glass, and Plastic only.  </p>
     </div>
     <hr>
+    <img class="icon bin" src="assets/leaf.svg">
     <h2>Correlation Tables</h2>
   </div>
 
   <!-- the bar chart -->
   <div class="barchart">
     <h2>Bar Chart</h2>
-    <p>This visualization shows the recycling behaviour of NYC people relating to their zone in NYC as well as their access to recycling facilities</p>
+    <p>This visualization displays the number of recycling bins in the city boroughs in relation to the total capture rate per borough. The height of the bars represents number of bins, and the color of each bar represents the capture rate.</p>
+    <!-- <p>Color Legend</p> -->
+    <div class="colorLegend-bar">
+      <div class="first">0-59%</div>
+      <div class="second">60-69%</div>
+      <div class="third">70-79%</div>
+      <div class="fourth">+80%</div>
+    </div>
     <div id="barChart" class="body">
       <script>$.getJSON('./data/BarChart.json', dataset => showBarChart(dataset, '#barChart', 600, 400)).error( () =>
               console.log('error: json not loaded'));
