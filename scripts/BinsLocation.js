@@ -48,7 +48,7 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
 
 
     });
-    
+
     d3.select("#submit").attr("class", "arda").on("submit", (e) => {
         let hideBins = document.getElementById("HideBins").value;
         let year = document.getElementById("Year").value;
@@ -101,22 +101,21 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
 
     d3.selectAll(".areamap2")
     .style("opacity", 0);
-    
 
     createMap(mapSvg,"map1",mapSize,dataSets[0],"CommunityDistricts",dataSets[3],districtColoringFunction);
 
-    createToolTips(mapSvg ,"map1",districtNames,RecylingRates,numOfBinsInDistrict,mapData);
-    createToolTips(mapSvg ,"map2",districtNames,RecylingRates,numOfBinsInDistrict,mapData);
+    createToolTips(mapSvg ,"map1",districtNames,RecylingRates,populationCDData,numOfBinsInDistrict,mapData);
+    createToolTips(mapSvg ,"map2",districtNames,RecylingRates,populationCDData,numOfBinsInDistrict,mapData);
 
     let mapOnScreen = false;
     let mapExists = false;
     d3.select("#secondMap")
     .on("click",()=>{
-        
+
         if(!mapOnScreen){
-            mapOnScreen = true;  
+            mapOnScreen = true;
             d3.selectAll(".areamap2")
-            .style("opacity", 1); 
+            .style("opacity", 1);
 
             if(mapData.map2.HideBins === "true"){
                 d3.selectAll(".recylingBinmap2")
@@ -166,7 +165,7 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
             });
             console.log(count);
             obj[d.properties.boro_cd] = count;
-           
+
           });
 console.log(obj);
 */
@@ -176,7 +175,7 @@ console.log(obj);
   //creates a map based on the datasets supplied.
   function createMap(svg,name,size,mapDataSet, mapDataSetObjectName, recylingBinDataSet,areaFillFunction, areaClickFunction) {
      // d3.select(".map ").remove(); //Remove existing map on screen
-    console.log("Hello");
+    //console.log("Hello");
      function tooltipHtml(){	/* function to create html content string in tooltip div. */
 		return "<h4>"+"Hello"+"</h4><table>"+
 			"<tr><td>Low</td><td>"+1+"</td></tr>"+
@@ -193,9 +192,9 @@ console.log(obj);
 
       let count = -1;
 
-     
-    
-      
+
+
+
       svg.selectAll(".area") //Draw the bouroughs on the screen
           .data(area.features)
           .enter()
@@ -204,7 +203,7 @@ console.log(obj);
           .attr("class", "area" + name)
           .attr("d", path)
           .attr("fill",d => areaFillFunction(d,color));
- 
+
 
 
       svg.append("path") //Draw each point at a locaiton of a recycling bin
@@ -212,8 +211,8 @@ console.log(obj);
           .attr("d", path)
           .attr("class", "recylingBin" + name)
           .attr("fill", "green");
-      
-      
+
+
 }
 
 function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
@@ -250,18 +249,18 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
     });
 }
 
-function createToolTips(svg,name, districtNames, recyclingRateDataSet,numOfBinsInDistrict,mapData){
+function createToolTips(svg,name, districtNames, recyclingRateDataSet,populationData,numOfBinsInDistrict,mapData){
     var div = d3.select("body")
-	.append("div") 
-    .attr("class", "tooltip")        
-    .style("opacity", 0);  
-    
+	.append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 
-    svg.selectAll(".area" + name) 
+
+    svg.selectAll(".area" + name)
         .on("mouseover", function (d) {
             let districtName = d.properties.boro_cd;
-            console.log(numOfBinsInDistrict);
+            //console.log(numOfBinsInDistrict);
             let bins = numOfBinsInDistrict[d.properties.boro_cd];
             let rate = "unknown";
 
@@ -269,7 +268,7 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,numOfBinsI
                 districtName = districtNames[districtName];
 
                 if(mapData[name].rateType === "cdPopulation"){
-                    ///Set Rate to the population. The name of the district is the variable districtName
+                    rate = getPopulation(d.properties.boro_cd,populationData);
                 }else{
                     let dataset = recyclingRateDataSet[mapData[name].year][mapData[name].fiscalMonth];
                     let rateType = mapData[name].rateType;
@@ -282,7 +281,7 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,numOfBinsI
                 }
 
             }
- 
+
             d3.select(this)
                 .attr("opacity", 0.5);
 
@@ -365,5 +364,16 @@ function cleanPopulation(populationData){
     else if(populationData[i].Borough == "Brooklyn") populationData[i]["CD Number"]+=300;
     else if(populationData[i].Borough == "Queens") populationData[i]["CD Number"]+=400;
     else if(populationData[i].Borough == "Staten Island") populationData[i]["CD Number"]+=500;
+  }
+}
+function getPopulation(cd, populationData){
+  //console.log(populationData);
+  for(var j =0; j<populationData.length; j++){
+    //console.log("popCD: "+cd);
+    if(cd == populationData[j]["CD Number"]){
+      temp = populationData[j]["2010 Population"];
+      //console.log(temp);
+      return temp;
+    }
   }
 }
