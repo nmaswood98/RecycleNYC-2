@@ -1,7 +1,7 @@
 function showBarChart(dataset, selector, w, h) {
 
 	// To have space around the graph
-	const padding = 10;
+	const padding = 20;
 
 	// Create a scale for Y-axis
 	const yScale = d3.scaleLinear();
@@ -37,7 +37,7 @@ function showBarChart(dataset, selector, w, h) {
 	.enter()
 	.append('rect')
 	// x coordinate for each bar starting from the left
-	.attr('x', (d, index) => index*(barWidth+barGaps)+30)
+	.attr('x', (d, index) => index*(barWidth+barGaps)+40)
 	// y coordinate for each bar starting from the top
 	.attr('y', d => {return h-d.NumberOfBins-padding})
 	.attr('width', barWidth)
@@ -99,8 +99,8 @@ svg.selectAll('rect').on("mouseover",function(d){
 	.enter()
 	.append('text')
 	.text(d => d.Borough)
-	.attr('x', (d, index) => index*(barWidth+barGaps)+30)
-	.attr('y', d => h-d.NumberOfBins-15)
+	.attr('x', (d, index) => index*(barWidth+barGaps)+40)
+	.attr('y', d => h-d.NumberOfBins-25)
 	.attr('fill', '#404040')
 	.style('font-size', '18px');
 
@@ -121,12 +121,12 @@ svg.selectAll('rect').on("mouseover",function(d){
 
 
 	// Add legend
-	// var w1 = 300, h1 = 50;
+	var w1 = 300, h1 = 50;
 
-  //   var key = svg.append("svg")
-  //     .attr("width", w1)
-  //     .attr("height", h1)
-  //     .attr("class", "axisColor");
+    var key = svg.append("svg")
+      .attr("width", 0)
+      .attr("height", 0)
+      .attr("class", "axisColor");
 
   //   var legend = key.append("defs")
   //     .append("svg:linearGradient")
@@ -181,4 +181,13 @@ svg.selectAll('rect').on("mouseover",function(d){
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("axis title");
+
+    // Add Y-axix Label
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -200)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Number of Bins");
 }
