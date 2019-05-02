@@ -33,9 +33,12 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
         }
     }
     let mapData = {
-        "map1": { HideBins: "true", year: "2013", fiscalMonth: "7", rateType: "dRate" },
-        "map2": { HideBins: "false", year: "2013", fiscalMonth: "7", rateType: "dRate" }
+        "map1": { HideBins: "true", year: "2013", fiscalMonth: "7", rateType: "cRateTotal" },
+        "map2": { HideBins: "false", year: "2013", fiscalMonth: "7", rateType: "cdPopulation" }
     };
+
+
+        document.getElementById("RateSelection").value = "cRateTotal";
 
 
     d3.selectAll('input[name="mapSelection"]').on("change", () => {
@@ -103,7 +106,7 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
     .style("opacity", 0);
 
     createMap(mapSvg,"map1",mapSize,dataSets[0],"CommunityDistricts",dataSets[3],districtColoringFunction);
-
+    
     createToolTips(mapSvg ,"map1",districtNames,RecylingRates,populationCDData,numOfBinsInDistrict,mapData);
     createToolTips(mapSvg ,"map2",districtNames,RecylingRates,populationCDData,numOfBinsInDistrict,mapData);
 
@@ -169,7 +172,8 @@ Promise.all(dataSetsToLoad).then(function(dataSets) {
           });
 console.log(obj);
 */
-
+    updateMap("map1", districtNames, RecylingRates["2013"]["7"], "cRateTotal" )
+    populationMap("map2",districtNames, populationCDData)
   });
 
   //creates a map based on the datasets supplied.
@@ -210,7 +214,8 @@ console.log(obj);
           .datum(topojson.feature(recylingBinDataSet, recylingBinDataSet.objects.RecylingBinData))
           .attr("d", path)
           .attr("class", "recylingBin" + name)
-          .attr("fill", "green");
+          .attr("fill", "green")
+          .style("pointer-events", "none");
 
 
 }
@@ -219,7 +224,7 @@ function updateMap(name, districtNames, recyclingRateDataSet, rateType ){
     let orangeColors = d3.scaleQuantize().domain([50, 110]).range(d3.schemeOranges[9]);
     let purpleColors = d3.scaleQuantize().domain([0, 95]).range(d3.schemePurples[9]);
     let blueColors = d3.scaleQuantize().domain([0, 125]).range(d3.schemeBlues[9]);
-    let blueColors2 = d3.scaleQuantize().domain([180, 1300]).range(d3.schemeBlues[9]);
+    let blueColors2 = d3.scaleQuantize().domain([180, 1300]).range(d3.schemeGreens[9]);
     let colorScaleToUse = orangeColors;
 
     if(rateType === 'dRate'){
