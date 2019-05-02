@@ -174,12 +174,27 @@
     float: right;
     margin-top: 10px;
   }
-
+  /* tooltip styles */
   div.tooltip {	
     position: absolute;			
-    text-align: center;			
-						
-    pointer-events: none;			
+    text-align: center;				
+    pointer-events: none;		
+    padding: 10px 20px;
+    background-color: rgba(64,64,64,0.7);
   }
+  div.tooltip span {
+    color: white;
+    font-size: 18px;
+    margin-left: 5px;
+    margin-right: 10px;
+    padding: 0;
+    text-align: left;
+  }
+  div.tooltip p {
+    color: white;
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
   
   

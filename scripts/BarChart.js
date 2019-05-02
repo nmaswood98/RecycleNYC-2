@@ -74,9 +74,9 @@ svg.selectAll('rect').on("mouseover",function(d){
 		.style("opacity", .9);
 
 	div.html(
-		"<span class = 'mapToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Population: </span><p style='padding: 0 10; margin-left: 0;'>" + d.Population + "</p>" +
-		"<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>Number of Bins: </span><p style='padding: 0 10; margin: 0;'>" + d['NumberOfBins'] + "</p>" +
-		"<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>" + "Capture Rate" + ": </span><p style='padding: 0 10; margin: 0;'>" + d['CaptureRate'] + "</p>")
+		"<span class = 'barToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Population: </span><p style='padding: 0 10; margin-left: 0;'>" + d.Population + "</p>" +
+		"<span class='barToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Number of Bins: </span><p style='padding: 0 10; margin: 0;'>" + d['NumberOfBins'] + "</p>" +
+		"<span class='barToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>" + "Capture Rate" + ": </span><p style='padding: 0 10; margin: 0;'>" + d['CaptureRate'] + "</p>")
 		.style("position", "absolute")
 		.style("background", "#509E52")
 		.style("width", 150 + "px")
