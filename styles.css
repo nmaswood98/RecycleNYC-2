@@ -13,7 +13,10 @@
   width: 700px;
   margin: 50px auto;
   }
-  
+  footer {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
   /* typography */
   h2, span, h1, h3 {
   text-align: left;
@@ -54,7 +57,16 @@
   margin-left: 150px;
   font-size: 18px;
   }
-  
+
+  /* correlation tables */
+  .correlationText {
+    text-align: center;
+    margin: 30px auto 0px auto;
+    font-family: "Fjalla One", sans-serif;
+  }
+  .cTable {
+    width: 400px;
+  }
   /* images and icons */
   .header-image {
   width: 450px;
@@ -175,14 +187,19 @@
     margin-top: 10px;
   }
   /* tooltip styles */
-  div.tooltip {	
+  .tooltip, .barTooltip {	
     position: absolute;			
     text-align: center;				
     pointer-events: none;		
     padding: 10px 20px;
+    margin: auto;
     background-color: rgba(64,64,64,0.7);
   }
-  div.tooltip span {
+  .barTooltip {
+    background-color: rgba(64,64,64,0.9);
+  }
+  div.tooltip span,
+  div.barTooltip span {
     color: white;
     font-size: 18px;
     margin-left: 5px;
@@ -190,7 +207,8 @@
     padding: 0;
     text-align: left;
   }
-  div.tooltip p {
+  div.tooltip p,
+  div.barTooltip p {
     color: white;
     font-size: 16px;
     margin: 10px 0;
