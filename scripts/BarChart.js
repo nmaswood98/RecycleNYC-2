@@ -23,6 +23,13 @@ function showBarChart(dataset, selector, w, h) {
 		.attr('height', h)
 		.attr("class", "axisColor");
 
+
+	var div = d3.select("body")
+		.append("div")
+		.attr("class", "tooltip")
+		.style("opacity", 0);
+
+
 	// Select all the rectangle inside 'svg'
 	// If there is not evough 'svg's, add more
 	svg.selectAll('rect')
@@ -51,6 +58,40 @@ function showBarChart(dataset, selector, w, h) {
 	// To add tooltip
 	.append('title')
 	.text(d => `Pop: ${d.Population} \nNoB: ${d['NumberOfBins']}\nCR: ${d['CaptureRate']}`);
+
+	
+svg.selectAll('rect').on("mouseover",function(d){
+	console.log("MouseOver");
+	d3.select(this)
+		.attr("opacity", 0.5);
+
+	div.transition()
+		.duration(500)
+		.style("opacity", 0);
+
+	div.transition()
+		.duration(200)
+		.style("opacity", .9);
+
+	div.html(
+		"<span class = 'mapToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Population: </span><p style='padding: 0 10; margin-left: 0;'>" + d.Population + "</p>" +
+		"<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>Number of Bins: </span><p style='padding: 0 10; margin: 0;'>" + d['NumberOfBins'] + "</p>" +
+		"<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>" + "Capture Rate" + ": </span><p style='padding: 0 10; margin: 0;'>" + d['CaptureRate'] + "</p>")
+		.style("position", "absolute")
+		.style("background", "#509E52")
+		.style("width", 150 + "px")
+		.style("left", 30 + "px")
+		.style("left", (d3.event.pageX) + "px")
+		.style("top", (d3.event.pageY - 28) + "px");
+}).on("mouseleave", function (d) {
+	d3.select(this)
+			.attr("opacity", 1);
+
+	div.transition()
+			.style("opacity", 0);
+
+});
+
 
 	// Add level for each bar
 	svg.selectAll('text')

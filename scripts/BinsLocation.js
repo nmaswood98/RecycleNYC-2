@@ -294,9 +294,9 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,population
                 .style("opacity", .9);
 
             div.html(
-                "<span class = 'mapToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>District: </span><p style='padding: 0 10; margin-left: 0;'>" + districtName + "</p>" +
-                "<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>Recycling Bins: </span><p style='padding: 0 10; margin: 0;'>"+bins+"</p>" +
-                "<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>"+"Value"+": </span><p style='padding: 0 10; margin: 0;'>"+rate+"</p>" )
+                "<span class = 'barChartToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>District: </span><p style='padding: 0 10; margin-left: 0;'>" + districtName + "</p>" +
+                "<span class='barChartToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Recycling Bins: </span><p style='padding: 0 10; margin: 0;'>"+bins+"</p>" +
+                "<span class='barChartToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>"+"Value"+": </span><p style='padding: 0 10; margin: 0;'>"+rate+"</p>" )
                 .style("position", "absolute")
                 .style("background", "#509E52")
                 .style("width", 150 + "px")
