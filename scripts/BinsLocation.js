@@ -298,7 +298,6 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,population
                 "<p><span class='mapToolTipText'>Recycling Bins: </span>"+bins+"</p>" +
                 "<p><span class='mapToolTipText'>"+"Value"+": </span>"+rate+"</p>" )
                 .style("position", "absolute")
-                // .style("background", "#509E52")
                 .style("width", 200 + "px")
                 .style("left", 30 + "px")
                 .style("left", (d3.event.pageX) + "px")

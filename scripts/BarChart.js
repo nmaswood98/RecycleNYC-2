@@ -27,7 +27,7 @@ function showBarChart(dataset, selector, w, h) {
 
 	var div = d3.select("body")
 		.append("div")
-		.attr("class", "tooltip")
+		.attr("class", "barTooltip")
 		.style("opacity", 0);
 
 		
@@ -59,8 +59,7 @@ function showBarChart(dataset, selector, w, h) {
 	// To add hover effect
 	.attr('class', 'bar')
 	// To add tooltip
-	.append('title')
-	.text(d => `Pop: ${d.Population} \nNoB: ${d['NumberOfBins']}\nCR: ${d['CaptureRate']}`);
+	.append('title');
 
 	
 svg.selectAll('rect').on("mouseover",function(d){
@@ -77,12 +76,11 @@ svg.selectAll('rect').on("mouseover",function(d){
 		.style("opacity", .9);
 
 	div.html(
-		"<span class = 'barToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Population: </span><p style='padding: 0 10; margin-left: 0;'>" + d.Population + "</p>" +
-		"<span class='barToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>Number of Bins: </span><p style='padding: 0 10; margin: 0;'>" + d['NumberOfBins'] + "</p>" +
-		"<span class='barToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>" + "Capture Rate" + ": </span><p style='padding: 0 10; margin: 0;'>" + d['CaptureRate'] + "</p>")
+		"<span class = 'barToolTipTitle'>Population: </span><p>" + d.Population + "</p>" +
+		"<span class='barToolTipTitle'>Number of Bins: </span><p>" + d['NumberOfBins'] + "</p>" +
+		"<span class='barToolTipTitle' style=>" + "Capture Rate" + ": </span><p>" + d['CaptureRate'] + "</p>")
 		.style("position", "absolute")
-		.style("background", "#509E52")
-		.style("width", 150 + "px")
+		.style("width", 200 + "px")
 		.style("left", 30 + "px")
 		.style("left", (d3.event.pageX) + "px")
 		.style("top", (d3.event.pageY - 28) + "px");
