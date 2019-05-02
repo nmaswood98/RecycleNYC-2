@@ -6,7 +6,8 @@ function showBarChart(dataset, selector, w, h) {
 	// Create a scale for Y-axis
 	const yScale = d3.scaleLinear();
 	// Set a domain; the domain covers the set of input values
-	yScale.domain([0, d3.max(dataset, data => data.NumberOfBins)]);
+	const maxBins = d3.max(dataset, data => data.NumberOfBins) + 20;
+	yScale.domain([0, maxBins]);
 	// Set a range; the range covers the set of output values
 	yScale.range([h-padding, padding]);
 
@@ -29,6 +30,8 @@ function showBarChart(dataset, selector, w, h) {
 		.attr("class", "tooltip")
 		.style("opacity", 0);
 
+		
+
 
 	// Select all the rectangle inside 'svg'
 	// If there is not evough 'svg's, add more
@@ -39,9 +42,9 @@ function showBarChart(dataset, selector, w, h) {
 	// x coordinate for each bar starting from the left
 	.attr('x', (d, index) => index*(barWidth+barGaps)+30)
 	// y coordinate for each bar starting from the top
-	.attr('y', d => {return h-d.NumberOfBins-padding})
+	.attr('y', d => {return yScale(d.NumberOfBins)})
 	.attr('width', barWidth)
-	.attr('height', d => d.NumberOfBins)
+	.attr('height', d => h - yScale(d.NumberOfBins))
 	// Change the color of each bar depending on its 'Capture Rate' attribute
 	.attr("fill", function(d) {
     if (d.CaptureRate < 60) {
@@ -100,7 +103,7 @@ svg.selectAll('rect').on("mouseover",function(d){
 	.append('text')
 	.text(d => d.Borough)
 	.attr('x', (d, index) => index*(barWidth+barGaps)+30)
-	.attr('y', d => h-d.NumberOfBins-15)
+	.attr('y', d => yScale(d.NumberOfBins)-padding)
 	.attr('fill', '#404040')
 	.style('font-size', '18px');
 
