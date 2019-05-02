@@ -21,19 +21,20 @@
 <div class="info">
 <img class="icon truck" src="assets/garbage-truck.svg">
 <h2>Project Description</h2>
-<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p>Our goal for this project was to create different visualizations to help explore and determine the correlation, or lack thereof, between the amount of recycling collected in New York City and both the number of recycling bins and population size of any given district.</p>
 <hr>
 <img class="icon earth" src="assets/planet-earth.svg">
 <h2>Research Questions</h2>
-<p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-<p>Q: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p>1. Is there a correlation between the number of recycling bins in a city borough and the volume of material collected for recycling?</p>
+<p>2. Is the volume of material collected for recycling correlated to the population of the boroughs?</p>
+<p>3. Is there a correlation between the number of recycling bins and the population size of a given district?</p>
 <hr>
 <div class="definitions">
 <img class="icon bin" src="assets/recycling-bin.svg">
 <h2>Definitions</h2>
-<span>Capture Rate:</span><p>Percentage of total Paper, Metal, Glass, and Plastic in the waste stream that is disposed of as recycling</p>
-<span>Diversion Rate:</span><p>Percentage of total solid waste collected by the Department of Sanitation that is disposed of as non-recycling, but converted to recycling waste after disposal.</p>
+<span>Capture Rate Paper:</span><p>Percentage of total Paper in the waste stream that is disposed of as recycling material.</p>
 <span>Capture Rate MGP:</span><p>Capture rate for Metal, Glass, and Plastic only. </p>
+<span>Diversion Rate:</span><p>Percentage of total solid waste collected that is disposed of as non-recycling, but converted to recycling waste after disposal.</p>
 </div>
 <hr>
 <img class="icon bin" src="assets/leaf.svg">
@@ -62,56 +63,62 @@ console.log('error: json not loaded'));
 <!-- the bin map -->
 <div class="binmap">
 <h2>Heatmap with Recycling Bins</h2>
-<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<p>The most interactive visualization in the project, it displays a heatmap of various data types over the city's topography.</p>
+<p>The default visualization displays a single heatmap of Diversion Rate for January 2013, with each recycling bin location punctuated in green.</p>
+<p>Using the visualization control buttons, the user can choose to view heatmaps of Diversion Rate, Capture Rate of Paper, Capture Rate MGP, and Population Size. There is also the option to display the recycling bins or not over any heatmap. Additionally, the user can choose to view two maps side by side for further exploration. All the data can be filtered by month and year from January 2013 to December 2018.</p>
+<p>Additional information is displayed for each district on hover such as the district's name as per the Department of Sanitation, the number of recycling bins on the district, and the exact value for the data being displayed on the heatmap.</p>
+<h3>Selection Tool</h3>
 <div class="selectionTool">
-<p class="selectP">Selection Tool</p>
-<button id="secondMap" >Show Second Map</button>
-<form id= "submit" >
-<!-- 2 map functionality -->
-<div id = "MapRadioButtons">
-<input id="radioButton1" type="radio" name="mapSelection" value="map1" checked="checked" >Left Map<br>
-<input id="radioButton2" type="radio" name="mapSelection" value="map2">Right Map<br>
+  
+  <form id= "submit" >
+  <!-- main tool -->
+  <div class="mainTool">
+  <select id="HideBins">
+  <option value="true">Show Recycling Bins</option>
+  <option value="false">Hide Recyling Bins</option>
+  </select>
+  <select id="Year">
+  <option value="2013">2013</option>
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+  <option value="2017">2017</option>
+  <option value="2018">2018</option>
+  </select>
+  <select id="FiscalMonth">
+  <option value="7">Jan</option>
+  <option value="8">Feb</option>
+  <option value="9">March</option>
+  <option value="10">April</option>
+  <option value="11">May</option>
+  <option value="12">June</option>
+  <option value="1">July</option>
+  <option value="2">Aug</option>
+  <option value="3">Sept</option>
+  <option value="4">Oct</option>
+  <option value="5">Nov</option>
+  <option value="5">Dec</option>
+  </select>
+  <select id="RateSelection">
+  <option value="dRate">Diversion Rate</option>
+  <option value="cRate">Capture Rate - Paper</option>
+  <option value="cRateMGP">Capture Rate - MGP</option>
+  <option value="cdPopulation">Neighborhood Population</option>
+  </select>
+  </div>
+  <!-- end of main tool -->
+  <!-- 2 map functionality -->
+  <div id = "MapRadioButtons">
+      <input id="radioButton1" type="radio" name="mapSelection" value="map1" checked="checked" >Left Map<br>
+      <input id="radioButton2" type="radio" name="mapSelection" value="map2">Right Map<br>
+  </div>
+ 
+  <button type="submit" id="btnSubmit">Submit</button>
+  </form>
+  <button id="secondMap" >Show Second Map</button>
 </div>
-<!-- main tool -->
-<div class="mainTool">
-<select id="HideBins">
-<option value="true">Show Recycling Bins</option>
-<option value="false">Hide Recyling Bins</option>
-</select>
-<select id="Year">
-<option value="2013">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>
-</select>
-<select id="FiscalMonth">
-<option value="7">Jan</option>
-<option value="8">Feb</option>
-<option value="9">March</option>
-<option value="10">April</option>
-<option value="11">May</option>
-<option value="12">June</option>
-<option value="1">July</option>
-<option value="2">Aug</option>
-<option value="3">Sept</option>
-<option value="4">Oct</option>
-<option value="5">Nov</option>
-<option value="5">Dec</option>
-</select>
-<select id="RateSelection">
-<option value="dRate">Diversion Rate</option>
-<option value="cRate">Capture Rate - Paper</option>
-<option value="cRateMGP">Capture Rate - MGP</option>
-<option value="cdPopulation">Neighborhood Population</option>
-</select>
-</div>
-<!-- end of main tool -->
-<button type="submit" id="btnSubmit">Submit</button>
+
 <div id="mapViz"></div>
-</form>
-</div>
 </div>
 
 </body>

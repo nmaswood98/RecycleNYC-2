@@ -15,7 +15,7 @@
   }
   
   /* typography */
-  h2, span, h1 {
+  h2, span, h1, h3 {
   text-align: left;
   font-family: "Fjalla One", sans-serif;
   }
@@ -28,9 +28,13 @@
   font-size: 30px;
   margin-left: 150px;
   }
+  h3 {
+    margin-left: 150px;
+  }
   p {
   text-align: justify;
-  font-size: 18px;
+  font-size: 19px;
+  line-height: 1.5em;
   width: 600px;
   margin: auto;
   margin-bottom: 30px;
@@ -105,23 +109,23 @@
   
   /* map viz */
   #mapViz {
-  margin-left:-220px;
+  margin-left:0px;
   padding: 0;
   }
-  
+  .binmap p {
+    padding: 5px 0px;
+    margin: 10px auto;
+  }
   /* map control */
   .selectionTool, form {
   text-align: left;
   }
   .selectionTool {
-  width: 70%;
-  margin: auto;
-  }
-  .selectP {
-  font-size: 20px;
-  font-family: "Fjalla One", sans-serif;
-  margin: 0 0 20px 0;
-  padding: 0;
+  width: 50%;
+  margin: 10px auto 50px auto;
+  padding: 20px;
+  border: solid 5px #31a354;
+  background:  rgba(80, 158, 82, 0.2);
   }
   #submit {
   padding: 10px 0px;
@@ -161,11 +165,12 @@
   font-size: 16px;
   background: white;
   color: #404040;
-  border: solid 2px #404040;
+  border: solid 2px #31a354;
   padding: 10px 30px;
   letter-spacing: 1px;
-  margin: 20px 5px 20px 0px;
+  margin: 5px 5px 20px 0px;
   }
   #btnSubmit {
-  margin-bottom: 30px;
+    float: right;
+    margin-top: 10px;
   }
