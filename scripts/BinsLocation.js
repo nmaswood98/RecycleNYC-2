@@ -210,7 +210,8 @@ console.log(obj);
           .datum(topojson.feature(recylingBinDataSet, recylingBinDataSet.objects.RecylingBinData))
           .attr("d", path)
           .attr("class", "recylingBin" + name)
-          .attr("fill", "green");
+          .attr("fill", "green")
+	  .style("pointer-events", "none");
 
 
 }
