@@ -301,7 +301,8 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,population
                 .style("background", "#509E52")
                 .style("width", 150 + "px")
                 .style("left", 30 + "px")
-                .style("top", (d3.event.pageY) + "px");
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
         })
         .on("mouseleave", function (d) {
             d3.select(this)
