@@ -204,8 +204,7 @@ console.log(obj);
           .attr("class", "area" + name)
           .attr("d", path)
           .attr("fill",d => areaFillFunction(d,color));
-
-          
+ 
 
 
       svg.append("path") //Draw each point at a locaiton of a recycling bin
@@ -296,11 +295,14 @@ function createToolTips(svg,name, districtNames, recyclingRateDataSet,numOfBinsI
                 .style("opacity", .9);
 
             div.html(
-                "<h2 class = 'mapToolTipTitle'>District: " + districtName + "</h2>" +
-                "<p class='mapToolTipText'>Recycling Bins: "+bins+"</p>" +
-                "<p class='mapToolTipText'>"+"Value"+": "+rate+"</p>" )
-                .style("left", (d3.event.pageX) + "px")
-                .style("top", (d3.event.pageY - 28) + "px");
+                "<span class = 'mapToolTipTitle' style='margin:0; padding: 0; font-size: 15px;'>District: </span><p style='padding: 0 10; margin-left: 0;'>" + districtName + "</p>" +
+                "<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>Recycling Bins: </span><p style='padding: 0 10; margin: 0;'>"+bins+"</p>" +
+                "<span class='mapToolTipText' style='margin:0; padding: 0; font-size: 15px;'>"+"Value"+": </span><p style='padding: 0 10; margin: 0;'>"+rate+"</p>" )
+                .style("position", "absolute")
+                .style("background", "#509E52")
+                .style("width", 150 + "px")
+                .style("left", 30 + "px")
+                .style("top", (d3.event.pageY) + "px");
         })
         .on("mouseleave", function (d) {
             d3.select(this)
