@@ -50,7 +50,7 @@ function showBarChart(dataset, selector, w, h) {
 	.attr('class', 'bar')
 	// To add tooltip
 	.append('title')
-	.text(d => `Pop: ${d.Population} \nNoB: ${d['NumberOfBins']}\nCR: ${d['Capture Rate']}`);
+	.text(d => `Pop: ${d.Population} \nNoB: ${d['NumberOfBins']}\nCR: ${d['CaptureRate']}`);
 
 	// Add level for each bar
 	svg.selectAll('text')
